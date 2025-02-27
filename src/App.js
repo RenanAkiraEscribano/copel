@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Menu from './components/menu/menu';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Reforma from './components/reforma/reforma';
+import Cac from './components/cac/cac';
+import TQ0102 from './components/tq-01-02/tq-01-02';
+import TQ030405 from './components/tq-03-04-05/tq-03-04-05';
+import Conhecimento from './components/conhecimento/conhecimento';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Menu />
+      <div className='container'>
+        <Routes>
+          <Route path='/reforma' element={<Reforma />} />
+          <Route path='/cac' element={<Cac />} />
+          <Route path='/tq01_02' element={<TQ0102 />} />
+          <Route path='/tq03_04_05' element={<TQ030405 />} />
+          <Route path='/conhecimento' element={<Conhecimento />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 

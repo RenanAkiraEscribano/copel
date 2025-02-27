@@ -1,0 +1,79 @@
+/* Layout principal */
+.tabela-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    gap: 20px;
+}
+
+/* Container de cada tabela */
+.tabela-dados-container {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    overflow-x: auto;
+}
+
+/* Título das tabelas */
+.tabela-dados-container h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Estilos para a tabela */
+.tabela-reforma {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.tabela-reforma th,
+.tabela-reforma td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.tabela-reforma th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Estilos para a paginação */
+.paginacao {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.paginacao button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.paginacao button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.paginacao button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.paginacao button:hover:not(:disabled) {
+    background-color: #007bff;
+    color: white;
+}

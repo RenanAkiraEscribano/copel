@@ -1,0 +1,179 @@
+/* Layout principal */
+.tabela-container {
+    display: flex;
+    margin: 20px;
+    gap: 20px;
+    /* Espaço entre o filtro e a tabela */
+}
+
+.filter-container {
+    width: 250px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    margin-left: 20px;
+    /* Espaço na lateral esquerda */
+    margin-top: 20px;
+    /* Espaço acima para não sobrepor a navbar */
+}
+
+.filter-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.date-range {
+    margin-bottom: 15px;
+}
+
+.date-range label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.date-range input[type="date"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.row-limit {
+    margin-bottom: 15px;
+}
+
+.row-limit label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.row-limit input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilos para o seletor de ordenação */
+.order-direction {
+    margin-bottom: 15px;
+}
+
+.order-direction label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.order-direction select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+}
+
+.order-direction select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.filter-item {
+    margin-bottom: 10px;
+}
+
+.filter-item label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.filter-item input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #007bff;
+    /* Cor do checkbox */
+}
+
+.filter-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+    background-color: #0056b3;
+}
+
+.tabela-dados-container {
+    flex: 1;
+    /* Ocupa o restante do espaço disponível */
+    overflow-x: auto;
+    /* Adiciona scroll horizontal se necessário */
+}
+
+/* Estilos para a tabela */
+.tabela-reforma {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.tabela-reforma th,
+.tabela-reforma td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.tabela-reforma th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+/* Estilos para a paginação */
+.paginacao {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.paginacao button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+
+.paginacao button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.paginacao button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
