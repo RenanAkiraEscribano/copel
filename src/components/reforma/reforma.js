@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './styles.css'; // Importe o arquivo CSS para estilização
 import TabelaReforma from './tableReforma';
+import { CSVLink } from 'react-csv';
 
 const Reforma = () => {
     const [selectedFilters, setSelectedFilters] = useState([]);
@@ -10,10 +11,20 @@ const Reforma = () => {
     const [rowLimit, setRowLimit] = useState(50); // Valor padrão de 50 linhas
     const [dadosFiltrados, setDadosFiltrados] = useState([]);
     const [orderDirection, setOrderDirection] = useState('DESC'); // Estado para controlar a direção da ordenação
+    const [idOperacao, setidOperacao] = useState(0);
+
 
     // Função para aplicar o filtro
     const aplicarFiltro = async () => {
+
+        const filters = {};
+
+        // Só adiciona "idOperacao" no filtro se ele não for igual a 0
+        if (idOperacao !== 0) {
+            filters.idOperacao = idOperacao;
+        }
         // Dados que serão enviados no corpo da requisição POST
+
         try {
             // Fazendo a requisição POST para o servidor local
             const response = await fetch('http://localhost:3333/rest/reforma/select', {
@@ -26,7 +37,7 @@ const Reforma = () => {
                     "limit": rowLimit, // Usando o valor de rowLimit
                     "orderBy": '',  // Se deseja que a query use um valor padrão, defina um valor para "orderBy"
                     "orderDirection": orderDirection, // Usando o valor de orderDirection
-                    "filters": {} // Você pode adicionar os filtros aqui conforme necessário ex: "idOperacao": 2
+                    "filters": filters // Você pode adicionar os filtros aqui conforme necessário ex: "idOperacao": 2
                 }),
             });
 
@@ -68,6 +79,15 @@ const Reforma = () => {
                         onChange={(e) => setEndDate(e.target.value)}
                     />
                 </div>
+                <div className="row-limit">
+                    <label>Código:</label>
+                    <input
+                        type="number"
+                        value={idOperacao}
+                        onChange={(e) => setidOperacao(Number(e.target.value))}
+                        min="1"
+                    />
+                </div>
                 <div className="order-direction">
                     <label>Ordenação:</label>
                     <select
@@ -84,7 +104,7 @@ const Reforma = () => {
                         type="number"
                         value={rowLimit}
                         onChange={(e) => setRowLimit(Number(e.target.value))}
-                        min="1"
+                        min="0"
                     />
                 </div>
                 <div className="filter-options">
@@ -113,6 +133,9 @@ const Reforma = () => {
                     ))}
                 </div>
                 <button className="filter-button" onClick={aplicarFiltro}>Aplicar Filtro</button>
+                <button className="csv-button" >
+                    <CSVLink data={dadosFiltrados} filename={"dados_Tabela_Reforma.csv"}>Download CSV</CSVLink>
+                </button>
             </div>
 
             {/* Tabela à direita */}

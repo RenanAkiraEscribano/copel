@@ -1,0 +1,213 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f7fafc; /* Definindo a cor de fundo da tela do navegador */
+    font-family: 'Arial', sans-serif;
+}
+/* Layout principal para a tela Home */
+.home-container {
+    display: flex;
+    flex-direction: column; /* Flexível em coluna para o layout */
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    padding-top: 0px; /* Ajuste para o tamanho da navbar */
+    background-color: #f7fafc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Contêiner de widgets */
+.widget-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os widgets se ajustem conforme a largura */
+    gap: 20px; /* Espaçamento entre os widgets */
+    justify-content: flex-start;
+}
+
+/* Estilo para o widget de informações */
+.widget-info {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    width: calc(20% - 40px); /* Ajuste a largura para 4 widgets por linha */
+    text-align: left;
+    box-sizing: border-box;
+    margin: 10px; /* Adiciona margem para separar os widgets */
+    z-index: 2;
+}
+
+
+/* Estilos para os itens da lista (Código, Operador, Data) */
+.widget-info .item {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-top: 10px;
+}
+
+.widget-info .value {
+    color: #555;
+}
+
+/* Estilo para o botão */
+.widget-info .button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.widget-info .button:hover {
+    background-color: #0056b3;
+}
+
+.widget-info .button:focus {
+    outline: 2px solid white;
+}
+
+/* Media Queries para telas menores */
+@media (max-width: 1024px) {
+    .widget-info {
+        width: calc(40% - 40px); /* Para telas médias, 2 blocos por linha */
+    }
+}
+
+@media (max-width: 600px) {
+    .widget-info {
+        width: 100%; /* Para telas pequenas, 1 bloco por linha */
+    }
+}
+
+/* Estilo para o modal de sobreposição */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que o modal fique por cima de outros elementos */
+    opacity: 0; /* Começa invisível */
+    pointer-events: none; /* Impede a interação com o fundo quando o modal está invisível */
+    transition: opacity 0.3s ease-in-out; /* Transição suave para a opacidade */
+}
+
+/* Modal visível */
+.modal-overlay.open {
+    opacity: 1; /* Torna o modal visível */
+    pointer-events: auto; /* Permite a interação com o fundo */
+}
+
+/* Estilo para o conteúdo do modal */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-height: 80%;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-50px); /* Inicialmente, o conteúdo do modal está levemente acima */
+    opacity: 0; /* Conteúdo começa invisível */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transição para opacidade e movimento */
+}
+
+/* Modal visível com animação suave */
+.modal-overlay.open .modal-content {
+    transform: translateY(0); /* O conteúdo desce para a posição normal */
+    opacity: 1; /* Torna o conteúdo visível */
+}
+
+.close-button {
+    background: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-button:hover {
+    background: #cc0000;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.modal ul {
+    list-style: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    margin-bottom: 15px;
+}
+
+.modal li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.modal li:last-child {
+    border-bottom: none;
+}
+
+.nova-observacao {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    background: #007bff;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.empty-message {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    padding: 10px;
+}

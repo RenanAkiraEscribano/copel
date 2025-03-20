@@ -1,3 +1,4 @@
+/* Navbar */
 .menu-color {
     background-color: #f7f7f7;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
@@ -5,6 +6,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed; /* Tornar fixa no topo */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Garantir que a navbar esteja acima do conteúdo */
 }
 
 .menu-container {
@@ -48,6 +54,7 @@
     margin-right: 0.3rem;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -57,7 +64,7 @@
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 60px; /* Espaço para a navbar */
         left: 50%;
         transform: translateX(-50%);
         background: white;
@@ -70,4 +77,16 @@
     .center-menu.open {
         display: flex;
     }
+}
+
+/* Ajuste o conteúdo da página para evitar sobreposição com a navbar */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    padding-top: 80px; /* Ajuste conforme a altura da navbar */
+    background-color: #f7fafc;
 }

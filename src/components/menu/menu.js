@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
-import './styles.css';
+import './stylesMenu.css';
 import Logo from '../../assets/Logo_LABMATER.png';
 
 const Menu = () => {

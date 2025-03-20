@@ -3,6 +3,7 @@
     display: flex;
     margin: 20px;
     gap: 20px;
+    padding-top: 100px;
     /* Espaço entre o filtro e a tabela */
 }
 
@@ -14,9 +15,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
     margin-left: 20px;
-    /* Espaço na lateral esquerda */
-    margin-top: 20px;
-    /* Espaço acima para não sobrepor a navbar */
 }
 
 .filter-title {
@@ -176,4 +174,39 @@
 .paginacao button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+}
+
+
+.csv-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.csv-button a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.csv-button:hover {
+    background-color: #006400; /* Verde escuro */
+}
+
+.csv-button:focus {
+    outline: 2px solid white;
+}
+
+
+.filter-button:hover {
+    background-color: #0056b3;
 }
