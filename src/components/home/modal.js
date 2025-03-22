@@ -1,13 +1,29 @@
 import React, { useState } from "react";
 import "./stylesHome.css"; // Estilos do modal
 
-const Modal = ({ isOpen, onClose, observacoes, adicionarObservacao }) => {
+const formatDate = (dateString) => {
+    if (!dateString) return "Data inválida";
+    
+    const date = new Date(dateString);
+    return new Intl.DateTimeFormat('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        timeZone: 'UTC'
+    }).format(date);
+};
+
+const Modal = ({ isOpen, onClose, idOperacao, observacoes, adicionarObservacao }) => {
     const [novaObservacao, setNovaObservacao] = useState("");
 
     const handleAddObservacao = () => {
         if (novaObservacao.trim()) {
-            adicionarObservacao(novaObservacao);
+            adicionarObservacao(idOperacao, novaObservacao);
             setNovaObservacao("");
+            onClose();
         }
     };
 
@@ -30,7 +46,7 @@ const Modal = ({ isOpen, onClose, observacoes, adicionarObservacao }) => {
                                     textAlign: "left",
                                 }}
                             >
-                                <strong>{observacao.data}</strong>: {observacao.texto}
+                                <strong>{formatDate(observacao.DATA_OBSERVACAO)}</strong>: {observacao.DESCRICAO}
                             </li>
                         ))
                     ) : (

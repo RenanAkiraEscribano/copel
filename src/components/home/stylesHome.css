@@ -32,7 +32,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
-    width: calc(20% - 40px); /* Ajuste a largura para 4 widgets por linha */
+    width: 330px; /* Ajuste a largura para 4 widgets por linha */
     text-align: left;
     box-sizing: border-box;
     margin: 10px; /* Adiciona margem para separar os widgets */

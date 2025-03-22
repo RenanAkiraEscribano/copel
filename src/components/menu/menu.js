@@ -16,7 +16,7 @@ const Menu = () => {
         { name: "TQ 03/04/05", href: "/tq03_04_05" },
         { name: "CaC", href: "/cac" },
         { name: "Sistema Especialista", href: "/conhecimento" },
-        //{ name: "Dashboard", href: "/dashboard" }
+        { name: "Dashboard", href: "/dashboard" }
     ];
 
     return (

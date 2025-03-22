@@ -48,8 +48,6 @@ const Reforma = () => {
             // Supondo que o servidor retorne os dados filtrados
             const dadosFiltrados = await response.json();
 
-            console.log(dadosFiltrados);
-
             // Atualiza o estado com os dados filtrados recebidos do servidor
             setDadosFiltrados(dadosFiltrados);
 
