@@ -3,6 +3,8 @@ import './styles.css'; // Importe o arquivo CSS para estilização
 import TabelaCac from './tableCac';
 import { CSVLink } from 'react-csv';
 
+const API_DOMINIO = "http://localhost:3333/rest/";
+
 const Cac = () => {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [filter, setFilter] = useState([]);
@@ -25,7 +27,7 @@ const Cac = () => {
         // Dados que serão enviados no corpo da requisição POST
         try {
             // Fazendo a requisição POST para o servidor local
-            const response = await fetch('http://localhost:3333/rest/reforma/select', {
+            const response = await fetch(API_DOMINIO+'cac/select', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -107,9 +109,7 @@ const Cac = () => {
                 </div>
                 <div className="filter-options">
                     {[
-                        "PT006_TQ03",
-                        "PT007_TQ04",
-                        "ME001"
+                        "PT006_TQ03", "PT007_TQ04", "ME001", "DO024", "DO026",
                     ].map((filtro) => (
                         <div key={filtro} className="filter-item">
                             <label>

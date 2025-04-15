@@ -6,23 +6,75 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed; /* Tornar fixa no topo */
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1000; /* Garantir que a navbar esteja acima do conteúdo */
+    z-index: 1000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .menu-container {
     display: flex;
     align-items: center;
     width: 100%;
-    justify-content: center;
+    max-width: 1200px;
+    justify-content: space-between;
+}
+
+.menu-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Botão de Logout */
+.logout-button {
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+    background-color: #e0e0e0;
+}
+
+.logout-button span {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Menu principal - Logo com zoom controlado */
+.menu-logo {
+    display: inline-block; /* Importante para o zoom */
 }
 
 .menu-logo img {
     width: 150px;
     height: auto;
+    transition: transform 0.3s ease;
+    transform-origin: left center; /* Ponto de origem do zoom */
+    image-rendering: -webkit-optimize-contrast; /* Melhora a qualidade do zoom */
+    image-rendering: crisp-edges;
+}
+
+/* Permite zoom com Ctrl+Scroll apenas na imagem */
+.menu-logo img {
+    touch-action: manipulation; /* Permite zoom programático */
+}
+
+/* Efeito visual opcional ao passar o mouse */
+.menu-logo img:hover {
+    transform: scale(1.05);
 }
 
 .menu-toggle {
@@ -31,6 +83,7 @@
     background: none;
     border: none;
     cursor: pointer;
+    color: #333;
 }
 
 .center-menu {
@@ -39,54 +92,64 @@
     gap: 20px;
     padding: 0;
     margin: 0;
-    justify-content: center;
-    width: 100%;
 }
 
 .center-menu li a {
     text-decoration: none;
     color: #333;
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 500;
     padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+.center-menu li a:hover {
+    color: #0066cc;
 }
 
 .margin-icon {
     margin-right: 0.3rem;
+    color: #0066cc;
+    font-size: 0.6rem;
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
+    .menu-content {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #f7f7f7;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .menu-content.open {
+        transform: translateX(0);
     }
 
     .center-menu {
-        display: none;
         flex-direction: column;
-        position: absolute;
-        top: 60px; /* Espaço para a navbar */
-        left: 50%;
-        transform: translateX(-50%);
-        background: white;
         width: 100%;
-        padding: 10px 0;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        text-align: center;
+        gap: 15px;
     }
 
-    .center-menu.open {
-        display: flex;
+    .logout-button {
+        margin-top: 20px;
+        padding-left: 0;
     }
-}
 
-/* Ajuste o conteúdo da página para evitar sobreposição com a navbar */
-.home-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-    padding-top: 80px; /* Ajuste conforme a altura da navbar */
-    background-color: #f7fafc;
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Ajuste para mobile */
+    .menu-logo img {
+        width: 120px; /* Tamanho menor em mobile */
+    }
 }

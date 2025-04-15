@@ -1,0 +1,42 @@
+/* App.css */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 60px;
+  margin-top: 40px; /* Altura da sua navbar */
+  box-sizing: border-box;
+  min-height: calc(100vh - 60px); /* Desconta a altura da navbar */
+}
+
+.diagram-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1340px;
+  margin: 20px auto;
+}
+
+.diagram {
+  width: 1340px;
+  height: 1140px;
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 100px); /* Ajuste conforme necessidade */
+  background-color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Mantenha seus estilos originais dos sensores */
+.sensor-value, .sensor-disable {
+  font-size: 16px;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: white;
+  stroke-width: 5px;
+  font-weight: bold;
+}
+
+.sensor-value { fill: blue; }
+.sensor-disable { fill: black; }

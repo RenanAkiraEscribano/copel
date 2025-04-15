@@ -3,6 +3,8 @@ import './styles.css'; // Importe o arquivo CSS para estilização
 import TabelaTQ0102 from './tableTq-01-02';
 import { CSVLink } from 'react-csv';
 
+const API_DOMINIO = "http://localhost:3333/rest/";
+
 const TQ0102 = () => {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [filter, setFilter] = useState([]);
@@ -25,7 +27,7 @@ const TQ0102 = () => {
         // Dados que serão enviados no corpo da requisição POST
         try {
             // Fazendo a requisição POST para o servidor local
-            const response = await fetch('http://localhost:3333/rest/reforma/select', {
+            const response = await fetch(API_DOMINIO+'armazenamento01/select', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

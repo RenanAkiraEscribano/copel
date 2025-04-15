@@ -1,5 +1,5 @@
 import React from 'react';
-import "./stylesHome.css";
+import "./stylesOperacao.css";
 
 const formatDate = (dateString) => {
     if (!dateString) return "Data inválida";

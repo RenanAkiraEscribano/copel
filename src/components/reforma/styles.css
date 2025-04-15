@@ -1,207 +1,77 @@
-/* Layout principal */
-.tabela-container {
-    display: flex;
-    margin: 20px;
-    gap: 20px;
-    padding-top: 100px;
-    /* Espaço entre o filtro e a tabela */
-}
-
 .filter-container {
-    width: 250px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
-    margin-left: 20px;
+    background-color: #f0f2f5; /* tom cinza-azulado claro */
 }
 
 .filter-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 15px;
+    color: #1f2d3d; /* quase preto */
 }
 
-.date-range {
-    margin-bottom: 15px;
+.date-range label,
+.row-limit label,
+.order-direction label,
+.filter-item label {
+    color: #3c4a57;
 }
 
-.date-range label {
-    display: block;
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 5px;
-}
-
-.date-range input[type="date"] {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.row-limit {
-    margin-bottom: 15px;
-}
-
-.row-limit label {
-    display: block;
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 5px;
-}
-
-.row-limit input[type="number"] {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* Estilos para o seletor de ordenação */
-.order-direction {
-    margin-bottom: 15px;
-}
-
-.order-direction label {
-    display: block;
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 5px;
-}
-
+.date-range input[type="date"],
+.row-limit input[type="number"],
 .order-direction select {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: white;
-    font-size: 14px;
-    color: #555;
-    cursor: pointer;
+    border: 1px solid #cfd8e3;
+    background-color: #ffffff;
 }
 
 .order-direction select:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.filter-item {
-    margin-bottom: 10px;
-}
-
-.filter-item label {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #555;
+    border-color: #2563eb;
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
 }
 
 .filter-item input[type="checkbox"] {
-    margin-right: 10px;
-    accent-color: #007bff;
-    /* Cor do checkbox */
+    accent-color: #2563eb; /* azul elegante */
 }
 
 .filter-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.3s ease;
+    background-color: #2563eb; /* azul moderno */
+}
+
+.filter-button:hover {
+    background-color: #1e40af;
 }
 
 .csv-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.3s ease;
-}
-
-.csv-button a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    width: 100%;
-    height: 100%;
+    background-color: #10b981; /* verde elegante */
 }
 
 .csv-button:hover {
-    background-color: #006400; /* Verde escuro */
+    background-color: #047857;
 }
 
 .csv-button:focus {
-    outline: 2px solid white;
-}
-
-
-.filter-button:hover {
-    background-color: #0056b3;
-}
-
-.tabela-dados-container {
-    flex: 1;
-    /* Ocupa o restante do espaço disponível */
-    overflow-x: auto;
-    /* Adiciona scroll horizontal se necessário */
-}
-
-/* Estilos para a tabela */
-.tabela-reforma {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-.tabela-reforma th,
-.tabela-reforma td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
+    outline: 2px solid #ffffff;
 }
 
 .tabela-reforma th {
-    background-color: #f4f4f4;
-    font-weight: bold;
+    background-color: #e2e8f0; /* azul-cinza bem claro */
+    color: #1f2d3d;
 }
 
-/* Estilos para a paginação */
-.paginacao {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    margin-top: 20px;
+.tabela-reforma td {
+    border: 1px solid #e0e0e0;
+    color: #333;
 }
 
 .paginacao button {
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    background-color: #f4f4f4;
-    cursor: pointer;
+    background-color: #e2e8f0;
+    border: 1px solid #cbd5e1;
+    color: #1f2d3d;
 }
 
 .paginacao button.active {
-    background-color: #007bff;
+    background-color: #2563eb;
     color: white;
-    border-color: #007bff;
+    border-color: #2563eb;
 }
 
 .paginacao button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+    background-color: #e5e7eb;
+    color: #9ca3af;
 }

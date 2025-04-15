@@ -38,26 +38,30 @@ const TabelaReforma = ({ dadosFiltrados, selectedFilters }) => {
     );
   };
 
-  // Renderiza as linhas da tabela com base nos dados e filtros selecionados
   const renderizarLinhas = () => {
     return dadosPagina.map((dado, index) => {
-      // Criando uma nova data a partir da string ISO
       const date = new Date(dado.DATA_REFORMA);
-  
-      // Formatando a data para o formato YYYY-MM-DD HH:mm:ss
       const formattedDate = date.toISOString().slice(0, 19).replace('T', ' ');
-  
+
       return (
         <tr key={index}>
-          <td>{formattedDate}</td> {/* Coluna fixa para a data/hora */}
-          {selectedFilters.map((filtro) => (
-            <td key={filtro}>{dado[filtro]}</td> // Colunas dinâmicas com base nos filtros selecionados
-          ))}
+          <td>{formattedDate}</td>
+          {selectedFilters.map((filtro) => {
+            const valor = dado[filtro];
+            let exibicao;
+
+            if (filtro.startsWith("DO")) {
+              exibicao = valor ? "Aberto" : "Fechada";
+            } else {
+              exibicao = valor;
+            }
+
+            return <td key={filtro}>{exibicao}</td>;
+          })}
         </tr>
       );
     });
   };
-  
 
   // Renderiza os controles de paginação
   const renderizarPaginacao = () => {

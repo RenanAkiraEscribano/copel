@@ -3,6 +3,8 @@ import './styles.css'; // Importe o arquivo CSS para estilização
 import TabelaReforma from './tableReforma';
 import { CSVLink } from 'react-csv';
 
+const API_DOMINIO = "http://localhost:3333/rest/";
+
 const Reforma = () => {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [filter, setFilter] = useState([]);
@@ -27,7 +29,7 @@ const Reforma = () => {
 
         try {
             // Fazendo a requisição POST para o servidor local
-            const response = await fetch('http://localhost:3333/rest/reforma/select', {
+            const response = await fetch(API_DOMINIO+'reforma/select', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -107,10 +109,10 @@ const Reforma = () => {
                 </div>
                 <div className="filter-options">
                     {[
-                        "TE001", "TE002", "TE003", "TE004", "PT001", "PT002", "PT003_TQ01",
+                        "TE001", "TE002", "TE003", "TE004", "PT001", "PT002", "PT003_TQ01", "PT004_TQ02", "PT009",
                         "MIT001_HUM", "MIT001_TEMP", "AT001", "FIC001_FLOW", "FIC001_MASS",
                         "FIC001_VOL", "FIC001_PRESS", "MIT002_HUM", "MIT002_TEMP", "FIT001_FLOW",
-                        "FIT001_MASS", "FIT001_VOL", "FIT001_PRESS"
+                        "FIT001_MASS", "FIT001_VOL", "FIT001_PRESS", "DO001", "DO002", "DO003", "DO004", "DO027",
                     ].map((filtro) => (
                         <div key={filtro} className="filter-item">
                             <label>

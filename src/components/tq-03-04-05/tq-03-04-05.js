@@ -3,6 +3,8 @@ import './styles.css'; // Importe o arquivo CSS para estilização
 import TabelaTQ030405 from './tableTq-03-04-05';
 import { CSVLink } from 'react-csv';
 
+const API_DOMINIO = "http://localhost:3333/rest/";
+
 const TQ030405 = () => {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [filter, setFilter] = useState([]);
@@ -25,7 +27,7 @@ const TQ030405 = () => {
         // Dados que serão enviados no corpo da requisição POST
         try {
             // Fazendo a requisição POST para o servidor local
-            const response = await fetch('http://localhost:3333/rest/reforma/select', {
+            const response = await fetch(API_DOMINIO+'armazenamento02/select', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -107,15 +109,10 @@ const TQ030405 = () => {
                 </div>
                 <div className="filter-options">
                     {[
-                        "PT006_TQ03",
-                        "PT007_TQ04",
-                        "PT008_TQ05",
-                        "PT010",
-                        "FIT002_FLOW",
-                        "FIT002_MASS",
-                        "FIT002_VOL",
-                        "FIT002_PRESS",
-                        "AT002"
+                        "PT006_TQ03", "PT007_TQ04", "PT008_TQ05", "PT010", "FIT002_FLOW",
+                        "FIT002_MASS", "FIT002_VOL", "FIT002_PRESS", "AT002",  "MIT003_HUM",
+                        "MIT003_TEMP", "FIC002_FLOW", "FIC002_MASS", "FIC002_VOL", "FIC002_PRESS",
+                        "DO018", "DO021", "DO022", "DO023", "DO025"
                     ].map((filtro) => (
                         <div key={filtro} className="filter-item">
                             <label>

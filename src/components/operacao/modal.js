@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./stylesHome.css"; // Estilos do modal
+import "./stylesOperacao.css"; // Estilos do modal
 
 const formatDate = (dateString) => {
     if (!dateString) return "Data inválida";
