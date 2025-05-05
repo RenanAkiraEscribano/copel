@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './FiltroTabs.css';
 
-const FiltroTabs = ({ onAplicar, dadosFiltrados }) => {
+const FiltroTabs = ({ onAplicar }) => {
     const tabs = ['Reforma', 'PSA', 'CaC'];
     const [activeTab, setActiveTab] = useState(2);
 
@@ -38,16 +38,15 @@ const FiltroTabs = ({ onAplicar, dadosFiltrados }) => {
             "TE001", "TE002", "TE003", "TE004", "PT001", "PT002", "PT003_TQ01", "PT004_TQ02", "PT009",
             "MIT001_HUM", "MIT001_TEMP", "AT001", "FIC001_TEMP", "FIC001_MASS",
             "FIC001_VOL", "FIC001_PRESS", "MIT002_HUM", "MIT002_TEMP", "FIT001_TEMP",
-            "FIT001_MASS", "FIT001_VOL", "FIT001_PRESS", "DO001", "DO002", "DO003", "DO004", "DO027",
+            "FIT001_MASS", "FIT001_VOL", "FIT001_PRESS",
         ],
         [
             "PT006_TQ03", "PT007_TQ04", "PT008_TQ05", "PT010", "FIT002_TEMP",
             "FIT002_MASS", "FIT002_VOL", "FIT002_PRESS", "AT002", "MIT003_HUM",
             "MIT003_TEMP", "FIC002_TEMP", "FIC002_MASS", "FIC002_VOL", "FIC002_PRESS",
-            "DO018", "DO021", "DO022", "DO023", "DO025"
         ],
         [
-            "PT006_TQ03", "PT007_TQ04", "ME001", "DO024", "DO026"
+            "PT006_TQ03", "PT007_TQ04", "ME001",
         ],
     ];
 
@@ -69,7 +68,29 @@ const FiltroTabs = ({ onAplicar, dadosFiltrados }) => {
     };
 
     const aplicarFiltro = () => {
-        onAplicar(filters[activeTab]);
+        const f = filters[activeTab];
+
+        const filtroApi = {
+            columns: f.selectedFilters,
+            limit: f.rowLimit || 1000,
+            orderBy: '',
+            orderDirection: f.orderDirection || 'ASC',
+            filters: {}
+        };
+
+        if (f.idOperacao && f.idOperacao !== 0) {
+            filtroApi.filters.idOperacao = f.idOperacao;
+        }
+
+        if (f.startDate && f.endDate) {
+            filtroApi.filters.dataInicial = f.startDate;
+            filtroApi.filters.dataFinal = f.endDate;
+        }
+
+        onAplicar({
+            ...filtroApi,
+            aba: activeTab 
+        });
     };
 
     return (
@@ -112,17 +133,6 @@ const FiltroTabs = ({ onAplicar, dadosFiltrados }) => {
                         onChange={(e) => handleChange('idOperacao', Number(e.target.value))}
                         min="1"
                     />
-                </div>
-
-                <div className="order-direction">
-                    <label>Ordenação:</label>
-                    <select
-                        value={filters[activeTab].orderDirection}
-                        onChange={(e) => handleChange('orderDirection', e.target.value)}
-                    >
-                        <option value="ASC">Crescente</option>
-                        <option value="DESC">Decrescente</option>
-                    </select>
                 </div>
 
                 <div className="row-limit">

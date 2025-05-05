@@ -3,52 +3,79 @@ import Chart from "react-apexcharts";
 import FiltroTabs from './FiltroTabs'; // Ajuste o caminho conforme sua estrutura
 import './stylesDashboard.css';
 
+const API_DOMINIO = process.env.REACT_APP_API_DOMINIO;
+
 const Dashboard = () => {
     const [chartType, setChartType] = useState('line');
     const [chartTitle, setChartTitle] = useState('Gráfico Template');
-    const [xAxisLabel, setXAxisLabel] = useState('Horas');
+    const [xAxisLabel, setXAxisLabel] = useState('Data');
     const [yAxisLabel, setYAxisLabel] = useState('Valores');
     const [showGrid, setShowGrid] = useState(true);
     const [normalizeData, setNormalizeData] = useState(true);
+    const [chartOptions, setChartOptions] = useState({});
+    const [chartSeries, setChartSeries] = useState([]);
+
 
     const [filtrosAtuais, setFiltrosAtuais] = useState(null);
 
-    const handleAplicarFiltro = (dados) => {
-        console.log("Filtro aplicado:", dados);
-        setFiltrosAtuais(dados);
-        console.log("Filtros atuais:", filtrosAtuais);
-        // Aqui você pode fazer fetch de dados com os filtros
-    };
+    const handleAplicarFiltro = async (filtros) => {
+        setFiltrosAtuais(filtros);
 
-    const options = {
-        chart: {
-            type: chartType,
-            height: '100%',
-        },
-        series: [
-            {
-                name: 'Teste',
-                data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
-            },
-        ],
-        title: {
-            text: chartTitle,
-            align: 'center'
-        },
-        xaxis: {
-            categories: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-            title: { text: xAxisLabel }
-        },
-        yaxis: {
-            title: { text: yAxisLabel }
-        },
-        grid: {
-            show: showGrid
-        },
-        dataLabels: {
-            enabled: false
+        const dominios = [
+            'rest/reforma/select',
+            'rest/armazenamento02/select',
+            'rest/cac/select'
+        ];
+
+        const url = dominios[filtros.aba] || ''; // rota fallback
+
+        try {
+            const response = await fetch(API_DOMINIO + url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(filtros)
+            });
+            const data = await response.json();
+
+            if (!Array.isArray(data) || data.length === 0) return;
+
+            const campos = filtros.columns; // adaptado para novo formato
+            const xField = Object.keys(data[0]).find(key => key.startsWith("DATA_")) || "DATA";
+
+            const valoresPorCampo = campos.map((campo) => {
+                const valores = data.map((item) => item[campo] ?? null);
+                const max = Math.max(...valores.filter(v => v != null));
+                const min = Math.min(...valores.filter(v => v != null));
+                return {
+                    name: campo,
+                    data: valores.map((v) => {
+                        if (v == null) return null;
+                        const valor = normalizeData ? (v - min) / (max - min) : v;
+                        return Number(valor.toFixed(2));
+                    })
+                };
+            });
+
+            setChartSeries(valoresPorCampo);
+            setChartOptions({
+                chart: { type: chartType, height: '100%' },
+                title: { text: chartTitle, align: 'center' },
+                xaxis: {
+                    categories: data.map(item => new Date(item[xField]).toLocaleString()),
+                    title: { text: xAxisLabel }
+                },
+                yaxis: {
+                    title: { text: yAxisLabel }
+                },
+                grid: { show: showGrid },
+                dataLabels: { enabled: false }
+            });
+
+        } catch (err) {
+            console.error('Erro ao buscar dados da API:', err);
         }
     };
+
 
     function settingsChart() {
         return (<div className="chart-settings">
@@ -109,8 +136,8 @@ const Dashboard = () => {
 
             <div className="chart-container">
                 <Chart
-                    options={options}
-                    series={options.series}
+                    options={chartOptions}
+                    series={chartSeries}
                     type={chartType}
                     height="100%"
                     width="1000"
