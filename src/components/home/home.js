@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import sensorPositions from './sensor_positions.json';
 
+
+const API_DOMINIO = process.env.REACT_APP_API_DOMINIO;
+
 const Home = () => {
 
     const [data, setData] = useState({});
@@ -9,12 +12,12 @@ const Home = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/sensorData');
+                const response = await fetch(API_DOMINIO+'rest/viewOperacao');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const newData = await response.json();
-                setData(newData);
+                setData(newData[0]);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
@@ -34,31 +37,28 @@ const Home = () => {
                 {Object.keys(data).map((sensorId) => {
                     const position = sensorPositions[sensorId];
                     if (position) {
-                        if ((data[sensorId] !== 0) && (data[sensorId] !== "close")) {
-                            return (
-                                <text
-                                    key={sensorId}
-                                    x={position.x}
-                                    y={position.y}
-                                    className="sensor-value"
-                                >
-                                    {data[sensorId]}
-                                </text>
-                            );
+                        const valor = data[sensorId];
+                        let exibicao;
+
+                        if (sensorId.startsWith("DO")) {
+                            exibicao = (valor === 0) ? "Fechada" : "Aberto";
                         } else {
-                            return (
-                                <text
-                                    key={sensorId}
-                                    x={position.x}
-                                    y={position.y}
-                                    className="sensor-disable"
-                                >
-                                    {data[sensorId]}
-                                </text>
-                            );
+                            exibicao = valor;
                         }
+
+                        const isAtivo = (valor !== null && valor !== "close");
+
+                        return (
+                            <text
+                                key={sensorId}
+                                x={position.x}
+                                y={position.y}
+                                className={isAtivo ? "sensor-value" : "sensor-disable"}
+                            >
+                                {exibicao}
+                            </text>
+                        );
                     } else {
-                        console.warn(`Position not found for sensor ${sensorId}`);
                         return null;
                     }
                 })}

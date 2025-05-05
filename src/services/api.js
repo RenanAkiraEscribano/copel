@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_DOMINIO || 'http://localhost:3333',
+  baseURL: process.env.REACT_APP_API_DOMINIO,
 });
 
 // Adiciona o token às requisições

@@ -3,13 +3,13 @@ import './styles.css'; // Importe o arquivo CSS para estilização
 import TabelaReforma from './tableReforma';
 import { CSVLink } from 'react-csv';
 
-const API_DOMINIO = "http://localhost:3333/rest/";
+const API_DOMINIO = process.env.REACT_APP_API_DOMINIO;
 
 const Reforma = () => {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [filter, setFilter] = useState([]);
-    const [startDate, setStartDate] = useState(new Date().toISOString().split('T')[0]); // Data de hoje como padrão
-    const [endDate, setEndDate] = useState(new Date().toISOString().split('T')[0]); // Data de hoje como padrão
+    const [startDate, setStartDate] = useState(); // Data de hoje como padrão
+    const [endDate, setEndDate] = useState(); // Data de hoje como padrão
     const [rowLimit, setRowLimit] = useState(50); // Valor padrão de 50 linhas
     const [dadosFiltrados, setDadosFiltrados] = useState([]);
     const [orderDirection, setOrderDirection] = useState('DESC'); // Estado para controlar a direção da ordenação
@@ -26,10 +26,22 @@ const Reforma = () => {
             filters.idOperacao = idOperacao;
         }
         // Dados que serão enviados no corpo da requisição POST
+        if (startDate && endDate) {
+            filters.dataInicial = startDate;
+            filters.dataFinal = endDate;
+        }
+
+        console.log({
+            "columns": selectedFilters, // Usando selectedFilters diretamente
+            "limit": rowLimit, // Usando o valor de rowLimit
+            "orderBy": '',  // Se deseja que a query use um valor padrão, defina um valor para "orderBy"
+            "orderDirection": orderDirection, // Usando o valor de orderDirection
+            "filters": filters // Você pode adicionar os filtros aqui conforme necessário ex: "idOperacao": 2
+        })
 
         try {
             // Fazendo a requisição POST para o servidor local
-            const response = await fetch(API_DOMINIO+'reforma/select', {
+            const response = await fetch(API_DOMINIO + 'rest/reforma/select', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -60,27 +72,26 @@ const Reforma = () => {
         }
     };
 
-    return (
-        <div className="tabela-container">
-            {/* Filtro à esquerda */}
+    function filtrosReforma() {
+        return (
             <div className="filter-container">
                 <h3 className="filter-title">Filtros</h3>
                 <div className="date-range">
                     <label>Data Inicial:</label>
                     <input
-                        type="date"
+                        type="datetime-local"
                         value={startDate}
-                        onChange={(e) => setStartDate(e.target.value)}
+                        onChange={(e) => setStartDate(e.target.value ? e.target.value.replace('T', ' ') + ':00' : '')}
                     />
                     <label>Data Final:</label>
                     <input
-                        type="date"
+                        type="datetime-local"
                         value={endDate}
-                        onChange={(e) => setEndDate(e.target.value)}
+                        onChange={(e) => setEndDate(e.target.value ? e.target.value.replace('T', ' ') + ':00' : '')}
                     />
                 </div>
                 <div className="row-limit">
-                    <label>Código:</label>
+                    <label>Operação:</label>
                     <input
                         type="number"
                         value={idOperacao}
@@ -110,8 +121,8 @@ const Reforma = () => {
                 <div className="filter-options">
                     {[
                         "TE001", "TE002", "TE003", "TE004", "PT001", "PT002", "PT003_TQ01", "PT004_TQ02", "PT009",
-                        "MIT001_HUM", "MIT001_TEMP", "AT001", "FIC001_FLOW", "FIC001_MASS",
-                        "FIC001_VOL", "FIC001_PRESS", "MIT002_HUM", "MIT002_TEMP", "FIT001_FLOW",
+                        "MIT001_HUM", "MIT001_TEMP", "AT001", "FIC001_TEMP", "FIC001_MASS",
+                        "FIC001_VOL", "FIC001_PRESS", "MIT002_HUM", "MIT002_TEMP", "FIT001_TEMP",
                         "FIT001_MASS", "FIT001_VOL", "FIT001_PRESS", "DO001", "DO002", "DO003", "DO004", "DO027",
                     ].map((filtro) => (
                         <div key={filtro} className="filter-item">
@@ -137,8 +148,15 @@ const Reforma = () => {
                     <CSVLink data={dadosFiltrados} filename={"dados_Tabela_Reforma.csv"}>Download CSV</CSVLink>
                 </button>
             </div>
+        )
+    }
 
-            {/* Tabela à direita */}
+
+    return (
+        <div className="tabela-container">
+            
+            {filtrosReforma()}
+
             <div className="tabela-dados-container">
                 <TabelaReforma dadosFiltrados={dadosFiltrados} selectedFilters={filter} />
             </div>

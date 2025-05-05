@@ -3,7 +3,7 @@ import './styles.css'; // Importe o arquivo CSS para estilização
 import TabelaTQ0102 from './tableTq-01-02';
 import { CSVLink } from 'react-csv';
 
-const API_DOMINIO = "http://localhost:3333/rest/";
+const API_DOMINIO = "";
 
 const TQ0102 = () => {
     const [selectedFilters, setSelectedFilters] = useState([]);

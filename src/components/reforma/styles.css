@@ -13,7 +13,7 @@
     color: #3c4a57;
 }
 
-.date-range input[type="date"],
+.date-range input[type="datetime-local"],
 .row-limit input[type="number"],
 .order-direction select {
     border: 1px solid #cfd8e3;

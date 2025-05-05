@@ -3,11 +3,12 @@ import WidgetInfo from "./widget";
 import Modal from "./modal";
 import "./stylesOperacao.css";
 
-const API_DOMINIO = process.env.REACT_APP_API_DOMINIO || "http://localhost:3333/";
+const API_DOMINIO = process.env.REACT_APP_API_DOMINIO;
 
 
 const Operacao = () => {
-    const [startDate, setStartDate] = useState(new Date().toISOString().split('T')[0]);
+    const [startDate, setStartDate] = useState();
+    const [endDate, setEndDate] = useState()
     const [idOperacao, setIdOperacao] = useState(0);
     const [selectedOperator, setSelectedOperator] = useState("");
     const [options, setOptions] = useState([]);
@@ -33,9 +34,13 @@ const Operacao = () => {
         if (idOperacao !== 0) {
             filters.idOperacao = idOperacao;
         }
+        if (startDate && endDate) {
+            filters.dataInicial = startDate;
+            filters.dataFinal = endDate;
+        }
 
         try {
-            const response = await fetch(API_DOMINIO+'rest/operacao/select', {
+            const response = await fetch(API_DOMINIO + 'rest/operacao/select', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -55,13 +60,13 @@ const Operacao = () => {
         } catch (error) {
             console.error('Erro ao aplicar filtro:', error);
         }
-    }, [idOperacao, orderDirection]); // Dependências: idOperacao e orderDirection
+    }, [idOperacao, orderDirection, endDate, startDate]); // Dependências: idOperacao e orderDirection
 
     // Memoize handleAddObservacao e adicione aplicarFiltro como dependência
     const handleAddObservacao = useCallback(async (idOperacao, novaObservacao) => {
         if (idOperacao !== 0) {
             try {
-                const response = await fetch(API_DOMINIO+'rest/observacoes/insert', {
+                const response = await fetch(API_DOMINIO + 'rest/observacoes/insert', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -86,7 +91,7 @@ const Operacao = () => {
 
     const fetchOperators = async () => {
         try {
-            const response = await fetch(API_DOMINIO+'rest/operador/select');
+            const response = await fetch(API_DOMINIO + 'rest/operador/select');
             const data = await response.json();
             setOptions(data.operators);
         } catch (error) {
@@ -107,9 +112,15 @@ const Operacao = () => {
                 <div className="date-range">
                     <label>Data Inicial:</label>
                     <input
-                        type="date"
+                        type="datetime-local"
                         value={startDate}
-                        onChange={(e) => setStartDate(e.target.value)}
+                        onChange={(e) => setStartDate(e.target.value ? e.target.value.replace('T', ' ') + ':00' : '')}
+                    />
+                    <label>Data Final:</label>
+                    <input
+                        type="datetime-local"
+                        value={endDate}
+                        onChange={(e) => setEndDate(e.target.value ? e.target.value.replace('T', ' ') + ':00' : '')}
                     />
                 </div>
                 <div className="row-limit">
@@ -157,7 +168,7 @@ const Operacao = () => {
                     ))}
                 </div>
 
-                <Modal isOpen={isModalOpen} onClose={closeModal} idOperacao={idOperacaoObs} observacoes={observacoes} adicionarObservacao={handleAddObservacao}/>
+                <Modal isOpen={isModalOpen} onClose={closeModal} idOperacao={idOperacaoObs} observacoes={observacoes} adicionarObservacao={handleAddObservacao} />
             </div>
         </div>
     );

@@ -3,13 +3,13 @@ import './styles.css'; // Importe o arquivo CSS para estilização
 import TabelaCac from './tableCac';
 import { CSVLink } from 'react-csv';
 
-const API_DOMINIO = "http://localhost:3333/rest/";
+const API_DOMINIO = process.env.REACT_APP_API_DOMINIO
 
 const Cac = () => {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [filter, setFilter] = useState([]);
-    const [startDate, setStartDate] = useState(new Date().toISOString().split('T')[0]); // Data de hoje como padrão
-    const [endDate, setEndDate] = useState(new Date().toISOString().split('T')[0]); // Data de hoje como padrão
+    const [startDate, setStartDate] = useState(); // Data de hoje como padrão
+    const [endDate, setEndDate] = useState(); // Data de hoje como padrão
     const [rowLimit, setRowLimit] = useState(50); // Valor padrão de 50 linhas
     const [dadosFiltrados, setDadosFiltrados] = useState([]);
     const [orderDirection, setOrderDirection] = useState('DESC'); // Estado para controlar a direção da ordenação
@@ -24,10 +24,15 @@ const Cac = () => {
         if (idOperacao !== 0) {
             filters.idOperacao = idOperacao;
         }
-        // Dados que serão enviados no corpo da requisição POST
+
+        if (startDate && endDate) {
+            filters.dataInicial = startDate;
+            filters.dataFinal = endDate;
+        }
+
         try {
             // Fazendo a requisição POST para o servidor local
-            const response = await fetch(API_DOMINIO+'cac/select', {
+            const response = await fetch(API_DOMINIO + 'rest/cac/select', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -60,82 +65,85 @@ const Cac = () => {
         }
     };
 
+    function filtroCac() {
+        return (<div className="filter-container">
+            <h3 className="filter-title">Filtros</h3>
+            <div className="date-range">
+                <label>Data Inicial:</label>
+                <input
+                    type="datetime-local"
+                    value={startDate}
+                    onChange={(e) => setStartDate(e.target.value ? e.target.value.replace('T', ' ') + ':00' : '')}
+                />
+                <label>Data Final:</label>
+                <input
+                    type="datetime-local"
+                    value={endDate}
+                    onChange={(e) => setEndDate(e.target.value ? e.target.value.replace('T', ' ') + ':00' : '')}
+                />
+            </div>
+            <div className="row-limit">
+                <label>Operação:</label>
+                <input
+                    type="number"
+                    value={idOperacao}
+                    onChange={(e) => setidOperacao(Number(e.target.value))}
+                    min="1"
+                />
+            </div>
+            <div className="order-direction">
+                <label>Ordenação:</label>
+                <select
+                    value={orderDirection}
+                    onChange={(e) => setOrderDirection(e.target.value)}
+                >
+                    <option value="ASC">Crescente</option>
+                    <option value="DESC">Decrescente</option>
+                </select>
+            </div>
+            <div className="row-limit">
+                <label>Número Máximo de Linhas:</label>
+                <input
+                    type="number"
+                    value={rowLimit}
+                    onChange={(e) => setRowLimit(Number(e.target.value))}
+                    min="1"
+                />
+            </div>
+            <div className="filter-options">
+                {[
+                    "PT006_TQ03", "PT007_TQ04", "ME001", "DO024", "DO026",
+                ].map((filtro) => (
+                    <div key={filtro} className="filter-item">
+                        <label>
+                            <input
+                                type="checkbox"
+                                checked={selectedFilters.includes(filtro)}
+                                onChange={(e) => {
+                                    if (e.target.checked) {
+                                        setSelectedFilters([...selectedFilters, filtro]);
+                                    } else {
+                                        setSelectedFilters(selectedFilters.filter((f) => f !== filtro));
+                                    }
+                                }}
+                            />
+                            {filtro}
+                        </label>
+                    </div>
+                ))}
+            </div>
+            <button className="filter-button" onClick={aplicarFiltro}>Aplicar Filtro</button>
+            <button className="csv-button" >
+                <CSVLink data={dadosFiltrados} filename={"dados_Tabela_Cac.csv"}>Download CSV</CSVLink>
+            </button>
+        </div>)
+    }
+
     return (
         <div className="tabela-container">
-            {/* Filtro à esquerda */}
-            <div className="filter-container">
-                <h3 className="filter-title">Filtros</h3>
-                <div className="date-range">
-                    <label>Data Inicial:</label>
-                    <input
-                        type="date"
-                        value={startDate}
-                        onChange={(e) => setStartDate(e.target.value)}
-                    />
-                    <label>Data Final:</label>
-                    <input
-                        type="date"
-                        value={endDate}
-                        onChange={(e) => setEndDate(e.target.value)}
-                    />
-                </div>
-                <div className="row-limit">
-                    <label>Código:</label>
-                    <input
-                        type="number"
-                        value={idOperacao}
-                        onChange={(e) => setidOperacao(Number(e.target.value))}
-                        min="1"
-                    />
-                </div>
-                <div className="order-direction">
-                    <label>Ordenação:</label>
-                    <select
-                        value={orderDirection}
-                        onChange={(e) => setOrderDirection(e.target.value)}
-                    >
-                        <option value="ASC">Crescente</option>
-                        <option value="DESC">Decrescente</option>
-                    </select>
-                </div>
-                <div className="row-limit">
-                    <label>Número Máximo de Linhas:</label>
-                    <input
-                        type="number"
-                        value={rowLimit}
-                        onChange={(e) => setRowLimit(Number(e.target.value))}
-                        min="1"
-                    />
-                </div>
-                <div className="filter-options">
-                    {[
-                        "PT006_TQ03", "PT007_TQ04", "ME001", "DO024", "DO026",
-                    ].map((filtro) => (
-                        <div key={filtro} className="filter-item">
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    checked={selectedFilters.includes(filtro)}
-                                    onChange={(e) => {
-                                        if (e.target.checked) {
-                                            setSelectedFilters([...selectedFilters, filtro]);
-                                        } else {
-                                            setSelectedFilters(selectedFilters.filter((f) => f !== filtro));
-                                        }
-                                    }}
-                                />
-                                {filtro}
-                            </label>
-                        </div>
-                    ))}
-                </div>
-                <button className="filter-button" onClick={aplicarFiltro}>Aplicar Filtro</button>
-                <button className="csv-button" >
-                    <CSVLink data={dadosFiltrados} filename={"dados_Tabela_Cac.csv"}>Download CSV</CSVLink>
-                </button>
-            </div>
+            
+            {filtroCac()}
 
-            {/* Tabela à direita */}
             <div className="tabela-dados-container">
                 <TabelaCac dadosFiltrados={dadosFiltrados} selectedFilters={filter} />
             </div>

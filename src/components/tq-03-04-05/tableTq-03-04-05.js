@@ -4,7 +4,7 @@ import './styles.css'; // Importe o arquivo CSS para estilização
 const TabelaTQ03_04_05 = ({ dadosFiltrados, selectedFilters }) => {
   const [paginaAtual, setPaginaAtual] = useState(1);
   const [dadosPagina, setDadosPagina] = useState([]);
-  const itensPorPagina = 15;
+  const itensPorPagina = 25;
 
   // Atualiza os dados da página atual quando os dados filtrados ou a página mudam
   useEffect(() => {
@@ -26,9 +26,10 @@ const TabelaTQ03_04_05 = ({ dadosFiltrados, selectedFilters }) => {
     return (
       <thead>
         <tr>
-          <th colSpan={selectedFilters.length + 1}>Dados Armazenamento PSA</th>
+          <th colSpan={selectedFilters.length + 2}>Dados Armazenamento PSA</th>
         </tr>
         <tr>
+          <th>Operação</th> {/* Coluna fixa para o idOperacao */}
           <th>Data/Hora</th> {/* Coluna fixa para a data/hora */}
           {selectedFilters.map((filtro) => (
             <th key={filtro}>{filtro}</th> // Colunas dinâmicas com base nos filtros selecionados
@@ -41,11 +42,12 @@ const TabelaTQ03_04_05 = ({ dadosFiltrados, selectedFilters }) => {
   // Renderiza as linhas da tabela com base nos dados e filtros selecionados
   const renderizarLinhas = () => {
     return dadosPagina.map((dado, index) => {
-      const date = new Date(dado.DATA_REFORMA);
+      const date = new Date(dado.DATA_ARMAZENAMENTOPSA);
       const formattedDate = date.toISOString().slice(0, 19).replace('T', ' ');
 
       return (
         <tr key={index}>
+          <td>{dado.idOperacao}</td>
           <td>{formattedDate}</td>
           {selectedFilters.map((filtro) => {
             const valor = dado[filtro];

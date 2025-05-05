@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
 
-const API_DOMINIO = "http://localhost:3333/rest/";
+const API_DOMINIO = process.env.REACT_APP_API_DOMINIO;
 const itensPorPagina = 15;
 
 const Conhecimento = () => {
@@ -11,12 +11,12 @@ const Conhecimento = () => {
   const [paginaDireita, setPaginaDireita] = useState(1);
 
   useEffect(() => {
-    fetch(API_DOMINIO+"conhecimento/select")
+    fetch(API_DOMINIO+"rest/conhecimento/select")
       .then((res) => res.json())
       .then((data) => setLeftData(data))
       .catch((err) => console.error("Erro ao buscar dados da esquerda", err));
 
-    fetch(API_DOMINIO+"logSE/select")
+    fetch(API_DOMINIO+"rest/logSE/select")
       .then((res) => res.json())
       .then((data) => setRightData(data))
       .catch((err) => console.error("Erro ao buscar dados da direita", err));

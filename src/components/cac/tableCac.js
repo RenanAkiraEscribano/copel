@@ -26,9 +26,10 @@ const TabelaCac = ({ dadosFiltrados, selectedFilters }) => {
     return (
       <thead>
         <tr>
-          <th colSpan={selectedFilters.length + 1}>Dados Célula a Combustivel</th>
+          <th colSpan={selectedFilters.length + 2}>Dados Célula a Combustivel</th>
         </tr>
         <tr>
+          <th>Operação</th> {/* Coluna fixa para o idOperacao */}
           <th>Data/Hora</th> {/* Coluna fixa para a data/hora */}
           {selectedFilters.map((filtro) => (
             <th key={filtro}>{filtro}</th> // Colunas dinâmicas com base nos filtros selecionados
@@ -41,11 +42,12 @@ const TabelaCac = ({ dadosFiltrados, selectedFilters }) => {
   // Renderiza as linhas da tabela com base nos dados e filtros selecionados
   const renderizarLinhas = () => {
     return dadosPagina.map((dado, index) => {
-      const date = new Date(dado.DATA_REFORMA);
+      const date = new Date(dado.DATA_STAMP);
       const formattedDate = date.toISOString().slice(0, 19).replace('T', ' ');
 
       return (
         <tr key={index}>
+          <td>{dado.idOperacao}</td>
           <td>{formattedDate}</td>
           {selectedFilters.map((filtro) => {
             const valor = dado[filtro];

@@ -4,7 +4,7 @@ import './styles.css'; // Importe o arquivo CSS para estilização
 const TabelaReforma = ({ dadosFiltrados, selectedFilters }) => {
   const [paginaAtual, setPaginaAtual] = useState(1);
   const [dadosPagina, setDadosPagina] = useState([]);
-  const itensPorPagina = 15;
+  const itensPorPagina = 30;
 
   // Atualiza os dados da página atual quando os dados filtrados ou a página mudam
   useEffect(() => {
@@ -26,9 +26,10 @@ const TabelaReforma = ({ dadosFiltrados, selectedFilters }) => {
     return (
       <thead>
         <tr>
-          <th colSpan={selectedFilters.length + 1}>Dados Reforma</th>
+          <th colSpan={selectedFilters.length + 2}>Dados Reforma</th>
         </tr>
         <tr>
+          <th>Operação</th> {/* Coluna fixa para o idOperacao */}
           <th>Data/Hora</th> {/* Coluna fixa para a data/hora */}
           {selectedFilters.map((filtro) => (
             <th key={filtro}>{filtro}</th> // Colunas dinâmicas com base nos filtros selecionados
@@ -45,6 +46,7 @@ const TabelaReforma = ({ dadosFiltrados, selectedFilters }) => {
 
       return (
         <tr key={index}>
+          <td>{dado.idOperacao}</td>
           <td>{formattedDate}</td>
           {selectedFilters.map((filtro) => {
             const valor = dado[filtro];
