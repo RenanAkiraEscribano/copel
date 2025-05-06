@@ -60,7 +60,7 @@ export function AuthProvider({ children }) {
         error: null
       });
 
-      return true; // Indica sucesso, mas não navega aqui
+      return true; 
 
     } catch (error) {
       localStorage.removeItem('authToken');
@@ -77,7 +77,7 @@ export function AuthProvider({ children }) {
         error: errorMessage
       }));
 
-      return false;
+      return false; 
     }
   };
 

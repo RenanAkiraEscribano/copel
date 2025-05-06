@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./stylesOperacao.css"; // Estilos do modal
+import "./stylesOperacao.css";
 
 const formatDate = (dateString) => {
     if (!dateString) return "Data inválida";
@@ -16,7 +16,14 @@ const formatDate = (dateString) => {
     }).format(date);
 };
 
-const Modal = ({ isOpen, onClose, idOperacao, observacoes, adicionarObservacao }) => {
+const Modal = ({
+    isOpen,
+    onClose,
+    idOperacao,
+    observacoes,
+    adicionarObservacao,
+    inativarObservacao // <--- nova prop
+}) => {
     const [novaObservacao, setNovaObservacao] = useState("");
 
     const handleAddObservacao = () => {
@@ -27,6 +34,11 @@ const Modal = ({ isOpen, onClose, idOperacao, observacoes, adicionarObservacao }
         }
     };
 
+    const handleInativarObservacao = (idOperacao, idObservacao) => {
+        inativarObservacao(idOperacao, idObservacao);
+        onClose();
+    }
+
     return (
         <div className={`modal-overlay ${isOpen ? "open" : ""}`} onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -34,7 +46,16 @@ const Modal = ({ isOpen, onClose, idOperacao, observacoes, adicionarObservacao }
                     Fechar
                 </button>
                 <h2>Observações</h2>
-                <ul className="modal" style={{ listStyle: "none", padding: 0, maxHeight: "200px", overflowY: "auto", border: "1px solid #ddd", borderRadius: "5px", background: "#f9f9f9", marginBottom: "15px" }}>
+                <ul className="modal" style={{
+                    listStyle: "none",
+                    padding: 0,
+                    maxHeight: "200px",
+                    overflowY: "auto",
+                    border: "1px solid #ddd",
+                    borderRadius: "5px",
+                    background: "#f9f9f9",
+                    marginBottom: "15px"
+                }}>
                     {observacoes.length > 0 ? (
                         observacoes.map((observacao, index) => (
                             <li
@@ -44,9 +65,28 @@ const Modal = ({ isOpen, onClose, idOperacao, observacoes, adicionarObservacao }
                                     borderBottom: "1px solid #ddd",
                                     fontSize: "0.9rem",
                                     textAlign: "left",
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    alignItems: "center"
                                 }}
                             >
-                                <strong>{formatDate(observacao.DATA_OBSERVACAO)}</strong>: {observacao.DESCRICAO}
+                                <span>
+                                    <strong>{formatDate(observacao.DATA_OBSERVACAO)}</strong>: {observacao.DESCRICAO}
+                                </span>
+                                <button
+                                    onClick={() => handleInativarObservacao(observacao.idOperacao, observacao.idObservacoes)}
+                                    style={{
+                                        background: "transparent",
+                                        border: "none",
+                                        color: "red",
+                                        cursor: "pointer",
+                                        fontSize: "1.1rem",
+                                        marginLeft: "10px"
+                                    }}
+                                    title="Inativar observação"
+                                >
+                                    🗑️
+                                </button>
                             </li>
                         ))
                     ) : (

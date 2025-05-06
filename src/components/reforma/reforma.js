@@ -72,6 +72,12 @@ const Reforma = () => {
         }
     };
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            aplicarFiltro();
+        }
+    };
+
     function filtrosReforma() {
         return (
             <div className="filter-container">
@@ -88,6 +94,7 @@ const Reforma = () => {
                         type="datetime-local"
                         value={endDate}
                         onChange={(e) => setEndDate(e.target.value ? e.target.value.replace('T', ' ') + ':00' : '')}
+                        onKeyDown={handleKeyDown}
                     />
                 </div>
                 <div className="row-limit">
@@ -96,6 +103,7 @@ const Reforma = () => {
                         type="number"
                         value={idOperacao}
                         onChange={(e) => setidOperacao(Number(e.target.value))}
+                        onKeyDown={handleKeyDown}
                         min="1"
                     />
                 </div>
@@ -115,6 +123,7 @@ const Reforma = () => {
                         type="number"
                         value={rowLimit}
                         onChange={(e) => setRowLimit(Number(e.target.value))}
+                        onKeyDown={handleKeyDown}
                         min="0"
                     />
                 </div>

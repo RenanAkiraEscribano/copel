@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 const API_DOMINIO = process.env.REACT_APP_API_DOMINIO;
 const itensPorPagina = 15;
@@ -11,12 +13,12 @@ const Conhecimento = () => {
   const [paginaDireita, setPaginaDireita] = useState(1);
 
   useEffect(() => {
-    fetch(API_DOMINIO+"rest/conhecimento/select")
+    fetch(API_DOMINIO + "rest/conhecimento/select")
       .then((res) => res.json())
       .then((data) => setLeftData(data))
       .catch((err) => console.error("Erro ao buscar dados da esquerda", err));
 
-    fetch(API_DOMINIO+"rest/logSE/select")
+    fetch(API_DOMINIO + "rest/logSE/select")
       .then((res) => res.json())
       .then((data) => setRightData(data))
       .catch((err) => console.error("Erro ao buscar dados da direita", err));
@@ -36,11 +38,23 @@ const Conhecimento = () => {
   return (
     <div className="tabela-container">
       <div className="tabela-dados-container">
-        <h2>Regras Sistema Especialista</h2>
+        <h2>
+          Variáveis Monitoradas SE   
+          <a
+            href="https://github.com/RenanAkiraEscribano/CopelH2RegrasSE/blob/main/regrasSE.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Abrir regras do SE em nova aba"
+            style={{ marginLeft: '8px', color: '#007bff' }}
+          >
+            <FontAwesomeIcon icon={faUpRightFromSquare} />
+          </a>
+        </h2>
+
         <table className="tabela-reforma">
           <thead>
             <tr>
-              <th>Regra</th>
+              <th>Variavel</th>
               <th>Tag</th>
               <th>Valor</th>
             </tr>

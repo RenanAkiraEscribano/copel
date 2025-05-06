@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import WidgetInfo from "./widget";
 import Modal from "./modal";
 import "./stylesOperacao.css";
+import { toast } from 'react-toastify';
 
 const API_DOMINIO = process.env.REACT_APP_API_DOMINIO;
 
@@ -60,7 +61,13 @@ const Operacao = () => {
         } catch (error) {
             console.error('Erro ao aplicar filtro:', error);
         }
-    }, [idOperacao, orderDirection, endDate, startDate]); // Dependências: idOperacao e orderDirection
+    }, [idOperacao, orderDirection, endDate, startDate]);
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            aplicarFiltro();
+        }
+    };
 
     // Memoize handleAddObservacao e adicione aplicarFiltro como dependência
     const handleAddObservacao = useCallback(async (idOperacao, novaObservacao) => {
@@ -78,13 +85,48 @@ const Operacao = () => {
                 });
 
                 if (!response.ok) {
+                    toast.error("Erro ao inserir observação.");
                     throw new Error('Erro ao inserir observação');
+                } else {
+                    toast.success("Observação inserida com sucesso."); 
                 }
 
                 // Após inserir a observação, aplica o filtro novamente
                 await aplicarFiltro();
             } catch (error) {
                 console.error('Erro ao inserir observação', error);
+                toast.error("Erro ao inserir observação.");
+            }
+        }
+    }, [aplicarFiltro]); // Dependência: aplicarFiltro
+
+    const handleDeleteObservacao = useCallback(async (idOperacao, idObservacoes) => {
+        if (idOperacao !== 0) {
+            try {
+
+                const response = await fetch(API_DOMINIO + 'rest/observacoes/inativar', {
+                    method: 'PATCH',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        "idOperacao": idOperacao,
+                        "idObservacoes": idObservacoes
+                    }),
+                });
+                
+                if (!response.ok) {
+                    toast.error("Erro ao inativar observação.");
+                    throw new Error('Erro ao inativar observação');
+                } else {
+                    toast.success("Observação inativada com sucesso.");
+                }
+
+                // Após inserir a observação, aplica o filtro novamente
+                await aplicarFiltro();
+            } catch (error) {
+                console.error('Erro ao inativar observação', error);
+                toast.error("Erro ao inativar observação.");
             }
         }
     }, [aplicarFiltro]); // Dependência: aplicarFiltro
@@ -121,6 +163,7 @@ const Operacao = () => {
                         type="datetime-local"
                         value={endDate}
                         onChange={(e) => setEndDate(e.target.value ? e.target.value.replace('T', ' ') + ':00' : '')}
+                        onKeyDown={handleKeyDown} 
                     />
                 </div>
                 <div className="row-limit">
@@ -129,6 +172,7 @@ const Operacao = () => {
                         type="number"
                         value={idOperacao}
                         onChange={(e) => setIdOperacao(Number(e.target.value))}
+                        onKeyDown={handleKeyDown}
                         min="1"
                     />
                 </div>
@@ -168,7 +212,7 @@ const Operacao = () => {
                     ))}
                 </div>
 
-                <Modal isOpen={isModalOpen} onClose={closeModal} idOperacao={idOperacaoObs} observacoes={observacoes} adicionarObservacao={handleAddObservacao} />
+                <Modal isOpen={isModalOpen} onClose={closeModal} idOperacao={idOperacaoObs} observacoes={observacoes} adicionarObservacao={handleAddObservacao} inativarObservacao={handleDeleteObservacao} />
             </div>
         </div>
     );

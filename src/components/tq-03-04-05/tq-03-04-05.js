@@ -65,6 +65,12 @@ const TQ030405 = () => {
         }
     };
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            aplicarFiltro();
+        }
+    };
+
     function filtroPSA() {
         return (<div className="filter-container">
             <h3 className="filter-title">Filtros</h3>
@@ -80,6 +86,7 @@ const TQ030405 = () => {
                     type="datetime-local"
                     value={endDate}
                     onChange={(e) => setEndDate(e.target.value ? e.target.value.replace('T', ' ') + ':00' : '')}
+                    onKeyDown={handleKeyDown}
                 />
             </div>
             <div className="row-limit">
@@ -88,6 +95,7 @@ const TQ030405 = () => {
                     type="number"
                     value={idOperacao}
                     onChange={(e) => setidOperacao(Number(e.target.value))}
+                    onKeyDown={handleKeyDown}
                     min="1"
                 />
             </div>
@@ -107,6 +115,7 @@ const TQ030405 = () => {
                     type="number"
                     value={rowLimit}
                     onChange={(e) => setRowLimit(Number(e.target.value))}
+                    onKeyDown={handleKeyDown}
                     min="1"
                 />
             </div>

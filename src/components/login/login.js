@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import './stylesLogin.css';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const [formData, setFormData] = useState({ nome: '', senha: '' });
@@ -10,6 +11,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [error, setError] = useState(null);
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,13 +22,16 @@ const Login = () => {
         const from = location.state?.from || '/home';
         navigate(from, { replace: true });
       } else {
+        toast.error('Login ou senha inválidos. Tente novamente.');
         setError('Login ou senha inválidos. Tente novamente.');
       }
     } catch (err) {
       console.error('Erro inesperado no handleSubmit:', err);
+      toast.error('Erro inesperado. Tente novamente mais tarde.'); 
       setError('Erro inesperado. Tente novamente mais tarde.');
     }
   };
+  
   
 
   return (

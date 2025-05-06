@@ -10,6 +10,7 @@ const PrivateRoute = ({ children, requiredNivel = 1 }) => {
   }
 
   if (!isAuthenticated) {
+    
     return <Navigate to="/login" state={{ from: location }} />;
   }
 

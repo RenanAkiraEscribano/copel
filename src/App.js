@@ -27,6 +27,8 @@ import lacta from './assets/lacta.png';
 import senai from './assets/senai.png';
 import solfacil from './assets/solfacil.png';
 import ufpr from './assets/ufpr.png';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const logos = [
@@ -60,6 +62,7 @@ function App() {
 
   return (
     <div className="page-wrapper">
+      <ToastContainer position="top-right" autoClose={3000} />
       {isAuthenticated && <Menu />}
       <main className="main-content">
         <Routes>
