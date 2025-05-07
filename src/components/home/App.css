@@ -62,3 +62,9 @@
   fill: black;
   pointer-events: none; /* <- Ainda desativa para sensores inativos, se quiser */
 }
+
+.sensor-value:hover {
+  fill: red;
+  cursor: pointer;
+}
+

@@ -3,7 +3,7 @@ import './App.css';
 import sensorPositions from './sensor_positions.json';
 
 const API_DOMINIO = process.env.REACT_APP_API_DOMINIO;
-
+//att
 const Home = () => {
     const [data, setData] = useState({});
     const [tooltip, setTooltip] = useState({ visible: false, x: 0, y: 0, text: '' });
