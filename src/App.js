@@ -13,6 +13,7 @@ import Operacao from './components/operacao/operacao';
 import Dashboard from './components/dashboard/dashboard';
 import Home from './components/home/home';
 import FooterColaboradores from './components/footerColaboradores/footerColaboradores';
+import Info from './components/infoPage/infoPage';
 import c3sl from './assets/c3sl.png';
 import copel from './assets/copel.png';
 import aneel from './assets/aneel.png';
@@ -66,6 +67,8 @@ function App() {
       {isAuthenticated && <Menu />}
       <main className="main-content">
         <Routes>
+
+          <Route path="/info" element={<Info />} />
           {/* Rota pública */}
           <Route path="/login" element={isAuthenticated ? <Navigate to="/home" /> : <Login />} />
 
