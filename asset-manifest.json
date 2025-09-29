@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/copel/static/css/main.a900bf0d.css",
+    "main.js": "/copel/static/js/main.48be538d.js",
+    "static/media/syngas.jpg": "/copel/static/media/syngas.059baaa09f9acdf0ac0e.jpg",
+    "static/media/food.jpg": "/copel/static/media/food.254ffa30ed63f939f8f2.jpg",
+    "static/media/biogas.jpg": "/copel/static/media/biogas.41462fbb9b363f2aef2e.jpg",
+    "static/media/psa-system.jpg": "/copel/static/media/psa-system.90d8e9b13e3c98ca6914.jpg",
+    "static/media/automation-control.jpg": "/copel/static/media/automation-control.47d85f5d71060c8a4894.jpg",
+    "static/media/fuel-cell.jpg": "/copel/static/media/fuel-cell.1a70c4c706ad4dee820f.jpg",
+    "static/media/hero.jpg": "/copel/static/media/hero.048bc8265a0330a66bea.jpg",
+    "static/media/labGD.png": "/copel/static/media/labGD.dc510e02756378e00fc3.png",
+    "static/media/apreno.png": "/copel/static/media/apreno.edbcbaef856dc3ca9898.png",
+    "static/media/ai-machine-learning.jpg": "/copel/static/media/ai-machine-learning.b7cb17fb34269fec5309.jpg",
+    "static/media/henergreen.png": "/copel/static/media/henergreen.dd46336640c3594d1f71.png",
+    "static/media/funpar.png": "/copel/static/media/funpar.d14bcbbd70fad534dd21.png",
+    "static/media/ufpr.png": "/copel/static/media/ufpr.029818163e3cb5922c45.png",
+    "static/media/lacta.png": "/copel/static/media/lacta.c060bdc8ca376109f1b9.png",
+    "static/media/solfacil.png": "/copel/static/media/solfacil.3d6223874a362f02ec84.png",
+    "static/media/eletron.png": "/copel/static/media/eletron.e0878a36a70f76e4d914.png",
+    "static/media/gasfuturo.png": "/copel/static/media/gasfuturo.4d9139551f6800ea413b.png",
+    "static/media/aneel.png": "/copel/static/media/aneel.0b9702ea2974d52371a2.png",
+    "static/media/senai.png": "/copel/static/media/senai.83eba8f2d189382f9378.png",
+    "static/media/Logo_LABMATER.png": "/copel/static/media/Logo_LABMATER.340ab0edb73249550157.png",
+    "static/media/goodwe.png": "/copel/static/media/goodwe.a9367fb30ee701bf7fb1.png",
+    "static/media/copel.png": "/copel/static/media/copel.33e557ca2eb24d0e4738.png",
+    "static/media/c3sl.png": "/copel/static/media/c3sl.933124193b3c0133fbbc.png",
+    "index.html": "/copel/index.html",
+    "main.a900bf0d.css.map": "/copel/static/css/main.a900bf0d.css.map",
+    "main.48be538d.js.map": "/copel/static/js/main.48be538d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a900bf0d.css",
+    "static/js/main.48be538d.js"
+  ]
+}
