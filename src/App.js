@@ -68,8 +68,8 @@ function App() {
       <main className="main-content">
         <Routes>
 
-          <Route path="/info" element={<Info />} />
           {/* Rota pública */}
+          <Route path="/info" element={<Info />} />
           <Route path="/login" element={isAuthenticated ? <Navigate to="/home" /> : <Login />} />
 
           {/* Rotas protegidas */}
@@ -123,7 +123,7 @@ function App() {
 
           {/* Redirecionamento padrão */}
           <Route path="*" element={
-            isAuthenticated ? <Navigate to="/home" /> : <Navigate to="/login" />
+            isAuthenticated ? <Navigate to="/home" /> : <Navigate to="/info" />
           } />
         </Routes>
       </main>
