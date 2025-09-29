@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/copel/static/css/main.a900bf0d.css",
-    "main.js": "/copel/static/js/main.48be538d.js",
+    "main.js": "/copel/static/js/main.73b8382a.js",
     "static/media/syngas.jpg": "/copel/static/media/syngas.059baaa09f9acdf0ac0e.jpg",
     "static/media/food.jpg": "/copel/static/media/food.254ffa30ed63f939f8f2.jpg",
     "static/media/biogas.jpg": "/copel/static/media/biogas.41462fbb9b363f2aef2e.jpg",
@@ -27,10 +27,10 @@
     "static/media/c3sl.png": "/copel/static/media/c3sl.933124193b3c0133fbbc.png",
     "index.html": "/copel/index.html",
     "main.a900bf0d.css.map": "/copel/static/css/main.a900bf0d.css.map",
-    "main.48be538d.js.map": "/copel/static/js/main.48be538d.js.map"
+    "main.73b8382a.js.map": "/copel/static/js/main.73b8382a.js.map"
   },
   "entrypoints": [
     "static/css/main.a900bf0d.css",
-    "static/js/main.48be538d.js"
+    "static/js/main.73b8382a.js"
   ]
 }
