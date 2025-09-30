@@ -12,6 +12,7 @@ import psaImage from '../../assets/psa-system.jpg';
 import fuelCellImage from '../../assets/fuel-cell.jpg';
 import automationImage from '../../assets/automation-control.jpg';
 import aiImage from '../../assets/ai-machine-learning.jpg';
+import bike from '../../assets/bike.jpg';
 
 export default function HydrogenProduction() {
   return (
@@ -87,7 +88,7 @@ export default function HydrogenProduction() {
         strength={300}
       >
         <h2 className="section-title text-secondary">
-          Separação por PSA
+          Obtenção de Hidrogênio de Alta Pureza
         </h2>
         <p className="section-description">
           O processo de Pressure Swing Adsorption (PSA) garante a purificação do hidrogênio, 
@@ -107,6 +108,20 @@ export default function HydrogenProduction() {
         <p className="section-description">
           O hidrogênio purificado é convertido em eletricidade limpa através de células 
           PEM (Proton Exchange Membrane), gerando energia elétrica com alta eficiência.
+        </p>
+      </ParallaxSection>
+
+      {/* Hydrogen Bike */}
+      <ParallaxSection
+        id="bike"
+        bgImage={bike}
+        strength={300}
+      >
+        <h2 className="section-title text-primary">
+          Mobilidade Sustentável com Bicicleta Elétrica
+        </h2>
+        <p className="section-description">
+          Texto
         </p>
       </ParallaxSection>
 
@@ -132,7 +147,7 @@ export default function HydrogenProduction() {
         strength={300}
       >
         <h2 className="section-title text-primary">
-          Supervisão baseada em Inteligência Artificial
+          Supervisão com apoio de Inteligência Artificial
         </h2>
         <p className="section-description">
           Algoritmos de machine learning analisam e otimizam a operação em tempo real, 

@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 
 const navItems = [
   { id: 'hero', label: 'Início' },
-  { id: 'biomassa', label: 'Biomassa' },
-  { id: 'biodigestor', label: 'Biodigestor' },
-  { id: 'syngas', label: 'Syngas' },
-  { id: 'psa', label: 'PSA' },
+  { id: 'biomassa', label: 'Biomassa Residual' },
+  { id: 'biodigestor', label: 'Biogás' },
+  { id: 'syngas', label: 'Reforma Catalítica' },
+  { id: 'psa', label: 'Hidrogênio' },
   { id: 'fuelcell', label: 'Célula PEM' },
+  { id: 'amonia', label: 'Amônia' },
+  { id: 'bike', label: 'Bicicleta' },
   { id: 'automation', label: 'Automação' },
   { id: 'ml', label: 'Inteligência Artificial' },
 ];
