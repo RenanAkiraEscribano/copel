@@ -11,6 +11,7 @@ const navItems = [
   { id: 'bike', label: 'Bicicleta' },
   { id: 'automation', label: 'Automação' },
   { id: 'ml', label: 'Inteligência Artificial' },
+  { id: 'certificado', label: 'Certificação de Hidrogênio' }
 ];
 
 export default function Navbar() {

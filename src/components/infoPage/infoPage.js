@@ -5,8 +5,7 @@ import Navbar from './NavBar';
 import heroImage from '../../assets/hero.jpg';
 import biomassImage from '../../assets/food.jpg';
 import biodigesterImage from '../../assets/biogas.jpg';
-
-//import syngasImage from '../../assets/syngas-production.jpg';
+import certificadoImage from '../../assets/certificado.jpg';
 import syngasImage from '../../assets/syngas.jpg';
 import psaImage from '../../assets/psa-system.jpg';
 import fuelCellImage from '../../assets/fuel-cell.jpg';
@@ -29,14 +28,14 @@ export default function HydrogenProduction() {
         className="pt-20"
       >
         <h1 className="section-title bg-gradient-primary">
-          Geração de Hidrogênio Renovável: Resíduos em Energia Limpa
+          Projeto B2H2: Produção e Usos do Hidrogênio Renovável em Escala Piloto
         </h1>
         <p className="section-subtitle">
           OBTENÇÃO DE H<sub>2</sub> DE ALTA PUREZA, SEM USO DE ÁGUA E COM BAIXA EMISSÃO DE CARBONO, A PARTIR DE RESÍDUOS DE ALIMENTOS
         </p>
         <p className="section-description mt-6">
           Conheça o projeto B2H2 (Biogas-to-Hydrogen): a primeira planta piloto do Brasil dedicada à produção de hidrogênio renovável de alta pureza a partir do biogás de resíduos orgânicos, em um processo inovador que dispensa o uso de água e minimiza a pegada de carbono.
-          O sistema integra módulos avançados — conversão termoquímica, purificação via PSA, armazenamento, e conversão em eletricidade por Células a Combustível — com aplicações demonstrativas em Amônia Verde e Mobilidade Urbana. Toda a operação é controlada por um sistema de automação com apoio de Inteligência Artificial na gestão de dados e otimização dos processos.
+          O sistema integra módulos avançados — conversão termoquímica, purificação via PSA, armazenamento, e conversão em eletricidade por Células a Combustível — com aplicações demonstrativas em Amônia e Mobilidade Urbana. Toda a operação é controlada por um sistema de automação com apoio de Inteligência Artificial na gestão de dados e otimização dos processos.
         </p>
       </ParallaxSection>
       <VideoMiniPlayer />
@@ -50,8 +49,7 @@ export default function HydrogenProduction() {
           Origem da Biomassa
         </h2>
         <p className="section-description">
-          O Restaurante Universitário (RU) da UFPR atende toda a comunidade universitária, e serve diariamente cerca de 14.000 refeições, entre café da manhã, almoço e jantar, no modelo self-service. O grande volume de refeições acaba gerando certa quantidade de resíduos orgânicos (alimentos) com potencial para a produção de biogás.
-          A planta piloto - B2H2, recebe estes resíduos devidamente processados para conversão em biogás por meio da biodigestão anaeróbia.
+          O Restaurante Universitário (RU) da UFPR atende toda a comunidade universitária, e serve diariamente cerca de 14.000 refeições, entre café da manhã, almoço e jantar, no modelo self-service. O grande volume de refeições acaba gerando certa quantidade de resíduos orgânicos (alimentos) com potencial para a produção de biogás. A planta piloto - B2H2, recebe parte destes resíduos devidamente processados para conversão em biogás por meio da biodigestão anaeróbia.
         </p>
       </ParallaxSection>
 
@@ -168,6 +166,20 @@ export default function HydrogenProduction() {
         </h2>
         <p className="section-description">
           O sistema proposto integra um Sistema Especialista (SE) para recomendar ações de uso do equipamento e modelos de Aprendizado de Máquina (AM) para a identificação precoce de falhas, promovendo o uso adequado dos recursos, com economia e eficiência dos processos. A transmissão e persistência dos dados é uma inovação no contexto da reforma a seco, e representa a base para aplicações em Inteligência Artificial (IA), uma vez que não há IA sem dados de qualidade. Esses dados poderão ser aplicados em algoritmos de AM para geração de novos conhecimento e otimização dos processos.
+        </p>
+      </ParallaxSection>
+
+      {/* Carbono/blockchain */}
+      <ParallaxSection
+        id="certificado"
+        bgImage={certificadoImage}
+        strength={0}
+      >
+        <h2 className="section-title text-primary">
+          Metodologia de Certificação e Rastreabilidade para Hidrogênio de Baixo Carbono
+        </h2>
+        <p className="section-description">
+          A principal contribuição está na proposição de uma metodologia robusta e transparente para certificar o hidrogênio de baixo carbono produzido via reforma a seco de resíduos alimentares. O projeto inclui o desenvolvimento de uma calculadora de pegada de carbono baseada nas normas ISO 14040, 14044 e 14067:2023, permitindo a avaliação consistente dos fluxos de entrada e saída do processo produtivo. A ferramenta é prática, auditável e adequada a aplicações técnicas e de certificação. O diferencial está na integração da metodologia com rastreabilidade digital via blockchain, possibilitando a emissão de certificados digitais de conformidade e assegurando a integridade e imutabilidade dos dados, fortalecendo a confiança de stakeholders e compradores de hidrogênio sustentável.
         </p>
       </ParallaxSection>
     </div>
