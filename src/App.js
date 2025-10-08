@@ -28,26 +28,57 @@ import lacta from './assets/lacta.png';
 import senai from './assets/senai.png';
 import solfacil from './assets/solfacil.png';
 import ufpr from './assets/ufpr.png';
+import ru from './assets/ru.png';
+import napi from './assets/NAPI.png';
+import labmater from './assets/labmater.png';
+import white from './assets/white.png';
+import shimadzu from './assets/shimadzu.png';
+import next from './assets/next.png';
+import araucaria from './assets/araucaria.png';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-const logos = [
-  { src: ufpr, alt: "", link: "https://ufpr.br/" },
-  { src: copel, alt: "", link: "https://www.copel.com/site/" },
-  { src: c3sl, alt: "", link: "https://www.c3sl.ufpr.br/" },
-  { src: aneel, alt: "", link: "https://www2.aneel.gov.br/" },
-  { src: apreno, alt: "", link: "https://www.apreno.org.br/" },
-  { src: eletron, alt: "", link: "https://www.eletronenergia.com.br/sobre-nos/" },
-  { src: funpar, alt: "", link: "https://www.funpar.ufpr.br/" },
-  { src: gasfuturo, alt: "", link: "https://gasfuturo.com/" },
-  { src: goodwe, alt: "", link: "https://br.goodwe.com/" },
-  { src: henergreen, alt: "", link: "https://henergreen.com.br/" },
-  { src: labGD, alt: "", link: "https://spin.ufpr.br/portfolio/prestacao-de-servicos/laboratorios/laboratorio-de-estudos-em-geracao-distribuida-labgd/" },
-  { src: lacta, alt: "", link: "https://lacta.ufpr.br/" },
-  { src: senai, alt: "", link: "https://www.senaipr.org.br/" },
-  { src: solfacil, alt: "", link: "https://solfacil.com.br/" },
+const logoGroups = [
+  {
+    logos: [
+      { src: aneel, alt: "", link: "https://www2.aneel.gov.br/", size: "xlarge" },
+    ]
+  },
+  {
+    logos: [
+      { src: copel, alt: "", link: "https://www.copel.com/site/", size: "xlarge" },
+      { src: ufpr, alt: "", link: "https://ufpr.br/", size: "large" },
+      { src: gasfuturo, alt: "", link: "https://gasfuturo.com/", size: "large" },
+      { src: apreno, alt: "", link: "https://www.apreno.org.br/", size: "small" },
+      { src: senai, alt: "", link: "https://www.pe.senai.br/", size: "xxlarge"},
+    ]
+  },
+  {
+    logos: [
+      { src: eletron, alt: "", link: "https://www.eletronenergia.com.br/sobre-nos/", size: "large" },
+      { src: white, alt: "", link: "", size: "medium" },
+      { src: shimadzu, alt: "", link: "" },
+      { src: next, alt: "", link: "", size: "large"  },
+      { src: henergreen, alt: "", link: "https://henergreen.com.br/", size: "xlarge" },
+      { src: solfacil, alt: "", link: "https://solfacil.com.br/", size: "large" },
+      { src: goodwe, alt: "", link: "https://br.goodwe.com/", size: "small" },
+      { src: araucaria, alt: "", link: "", size: "large"  },
+    ]
+  },
+  {
+    logos: [
+      { src: labmater, alt: "labmater", link: "", size: "xlarge" },
+      { src: labGD, alt: "", link: "https://spin.ufpr.br/portfolio/prestacao-de-servicos/laboratorios/laboratorio-de-estudos-em-geracao-distribuida-labgd/", size: "large" },
+      { src: lacta, alt: "", link: "https://lacta.ufpr.br/", size: "medium" },
+      { src: c3sl, alt: "", link: "https://www.c3sl.ufpr.br/" },
+      { src: ru, alt: "", link: "", size: "large" },
+      { src: funpar, alt: "", link: "https://www.funpar.ufpr.br/", size: "large" },
+      { src: napi, alt: "", link: "", size: "xxlarge" },
+    ]
+  }
+  
 ];
+
 
 function App() {
   const { isAuthenticated, loading } = useAuth();
@@ -127,7 +158,7 @@ function App() {
           } />
         </Routes>
       </main>
-      <FooterColaboradores logos={logos} />
+      <FooterColaboradores logoGroups={logoGroups} />
     </div>
   );
 }

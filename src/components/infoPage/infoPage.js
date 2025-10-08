@@ -13,6 +13,7 @@ import fuelCellImage from '../../assets/fuel-cell.jpg';
 import automationImage from '../../assets/automation-control.jpg';
 import aiImage from '../../assets/ai-machine-learning.jpg';
 import bike from '../../assets/bike.jpg';
+import amonia from '../../assets/amonia.jpg';
 
 export default function HydrogenProduction() {
   return (
@@ -108,6 +109,20 @@ export default function HydrogenProduction() {
         <p className="section-description">
           O hidrogênio purificado é convertido em eletricidade limpa através de células 
           PEM (Proton Exchange Membrane), gerando energia elétrica com alta eficiência.
+        </p>
+      </ParallaxSection>
+
+      {/* Amonia */}
+      <ParallaxSection
+        id="amonia"
+        bgImage={amonia}
+        strength={600}
+      >
+        <h2 className="section-title text-primary">
+          Amonia Verde
+        </h2>
+        <p className="section-description">
+          Texto
         </p>
       </ParallaxSection>
 
