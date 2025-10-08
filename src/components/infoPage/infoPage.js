@@ -15,6 +15,8 @@ import aiImage from '../../assets/ai-machine-learning.jpg';
 import bike from '../../assets/bike.jpg';
 import amonia from '../../assets/amonia.jpg';
 
+import VideoMiniPlayer from "./VideoMiniPlayer";
+
 export default function HydrogenProduction() {
   return (
     <div className="relative">
@@ -37,7 +39,7 @@ export default function HydrogenProduction() {
           O sistema integra módulos avançados — conversão termoquímica, purificação via PSA, armazenamento, e conversão em eletricidade por Células a Combustível — com aplicações demonstrativas em Amônia Verde e Mobilidade Urbana. Toda a operação é controlada por um sistema de automação com apoio de Inteligência Artificial na gestão de dados e otimização dos processos.
         </p>
       </ParallaxSection>
-
+      <VideoMiniPlayer />
       {/* Biomass Section */}
       <ParallaxSection
         id="biomassa"
