@@ -27,13 +27,14 @@ export default function HydrogenProduction() {
         className="pt-20"
       >
         <h1 className="section-title bg-gradient-primary">
-          Planta Piloto de Produção de Hidrogênio
+          Geração de Hidrogênio Renovável: Resíduos em Energia Limpa
         </h1>
         <p className="section-subtitle">
-          Uma parceria inovadora com a Copel
+          OBTENÇÃO DE H<sub>2</sub> DE ALTA PUREZA, SEM USO DE ÁGUA E COM BAIXA EMISSÃO DE CARBONO, A PARTIR DE RESÍDUOS DE ALIMENTOS
         </p>
         <p className="section-description mt-6">
-          Tecnologia sustentável para conversão de biomassa em energia limpa através de processos industriais avançados
+          Conheça o projeto B2H2 (Biogas-to-Hydrogen): a primeira planta piloto do Brasil dedicada à produção de hidrogênio renovável de alta pureza a partir do biogás de resíduos orgânicos, em um processo inovador que dispensa o uso de água e minimiza a pegada de carbono.
+          O sistema integra módulos avançados — conversão termoquímica, purificação via PSA, armazenamento, e conversão em eletricidade por Células a Combustível — com aplicações demonstrativas em Amônia Verde e Mobilidade Urbana. Toda a operação é controlada por um sistema de automação com apoio de Inteligência Artificial na gestão de dados e otimização dos processos.
         </p>
       </ParallaxSection>
 
@@ -41,14 +42,14 @@ export default function HydrogenProduction() {
       <ParallaxSection
         id="biomassa"
         bgImage={biomassImage}
-        strength={300}
+        strength={0}
       >
         <h2 className="section-title text-secondary">
           Origem da Biomassa
         </h2>
         <p className="section-description">
-          Resíduos do Restaurante Universitário são utilizados como matéria-prima sustentável, 
-          promovendo economia circular e reduzindo desperdício de alimentos orgânicos.
+          O Restaurante Universitário (RU) da UFPR atende toda a comunidade universitária, e serve diariamente cerca de 14.000 refeições, entre café da manhã, almoço e jantar, no modelo self-service. O grande volume de refeições acaba gerando certa quantidade de resíduos orgânicos (alimentos) com potencial para a produção de biogás.
+          A planta piloto - B2H2, recebe estes resíduos devidamente processados para conversão em biogás por meio da biodigestão anaeróbia.
         </p>
       </ParallaxSection>
 
@@ -56,14 +57,15 @@ export default function HydrogenProduction() {
       <ParallaxSection
         id="biodigestor"
         bgImage={biodigesterImage}
-        strength={300}
+        strength={0}
       >
         <h2 className="section-title text-primary">
-          Biodigestor
+          Biodigestão Anaeróbia - Biogás
         </h2>
         <p className="section-description">
-          Conversão da biomassa em biogás através de um processo biológico controlado. 
-          Sistema anaeróbio otimizado para máxima eficiência na produção de metano e CO₂.
+          Os resíduos de alimentos do RU são submetidos ao processo de biodigestão anaeróbia, que compreende ciclos fundamentais como hidrólise, acidogênese,
+          acetogênese e metanogênese, gerando o biogás, um recurso energético amplamente
+          empregado como insumo para a produção de energia que consiste, principalmente, na mistura de metano (CH4) e dióxido de carbono (CO2).
         </p>
       </ParallaxSection>
 
@@ -71,14 +73,13 @@ export default function HydrogenProduction() {
       <ParallaxSection
         id="syngas"
         bgImage={syngasImage}
-        strength={300}
+        strength={0}
       >
         <h2 className="section-title text-accent">
           Produção de Syngas
         </h2>
         <p className="section-description">
-          O biogás é reformado para produzir Syngas (gás de síntese), composto principalmente 
-          por hidrogênio (H₂) e monóxido de carbono (CO) através de reforma a vapor em alta temperatura.
+          O biogás (mistura de CH4 e CO2) é submetido a um processo termoquímico a 800 oC na presença de um catalisador, desenvolvido exclusivamente para o projeto B2H2, capaz de convertê-lo em syngas (gás de síntese), que consiste em um mistura gasosa de hidrogênio (H2) e monóxido de carbo o (CO). O syngas que se caracteriza como matéria prima para a produção de vários produtos de interesse industrial (metanol, BioQAv, etc) ou para o fornecimento do hidrogênio, quando este é separado e purificado.
         </p>
       </ParallaxSection>
 
@@ -86,13 +87,13 @@ export default function HydrogenProduction() {
       <ParallaxSection
         id="psa"
         bgImage={psaImage}
-        strength={300}
+        strength={0}
       >
         <h2 className="section-title text-secondary">
-          Obtenção de Hidrogênio de Alta Pureza
+          Hidrogênio Renovável de Alta Pureza
         </h2>
         <p className="section-description">
-          O processo de Pressure Swing Adsorption (PSA) garante a purificação do hidrogênio, 
+          O processo de Pressure Swing Adsorption (PSA) garante a purificação do hidrogênio,
           removendo impurezas e concentrando H₂ para uso em células a combustível.
         </p>
       </ParallaxSection>
@@ -101,13 +102,13 @@ export default function HydrogenProduction() {
       <ParallaxSection
         id="fuelcell"
         bgImage={fuelCellImage}
-        strength={600}
+        strength={0}
       >
         <h2 className="section-title text-primary">
           Célula a Combustível PEM
         </h2>
         <p className="section-description">
-          O hidrogênio purificado é convertido em eletricidade limpa através de células 
+          O hidrogênio purificado é convertido em eletricidade limpa através de células
           PEM (Proton Exchange Membrane), gerando energia elétrica com alta eficiência.
         </p>
       </ParallaxSection>
@@ -116,27 +117,27 @@ export default function HydrogenProduction() {
       <ParallaxSection
         id="amonia"
         bgImage={amonia}
-        strength={600}
+        strength={0}
       >
         <h2 className="section-title text-primary">
-          Amonia Verde
+          Amonia Renovável
         </h2>
         <p className="section-description">
-          Texto
-        </p>
+          O hidrogênio de alta pureza produzido na planta B2H2 é um insumo essencial para a síntese da Amônia (NH3) Renovável. A Amônia é um dos principais vetores de energia junto ao hidrogênio. A Amônia renovável é crucial para a descarbonização de setores como a agricultura (fertilizantes) e o transporte marítimo (combustível), e o projeto B2H2 demonstra como o hidrogênio renovável, obtido de resíduos orgânicos, pode alimentar essa importante cadeia de valor industrial, promovendo uma economia circular e sustentável.        </p>
       </ParallaxSection>
 
       {/* Hydrogen Bike */}
       <ParallaxSection
         id="bike"
         bgImage={bike}
-        strength={300}
+        strength={0}
       >
         <h2 className="section-title text-primary">
           Mobilidade Sustentável com Bicicleta Elétrica
         </h2>
         <p className="section-description">
-          Texto
+          O projeto B2H2 não se limita à produção de hidrogênio; ele também demonstra seu uso final em aplicações práticas, promovendo a mobilidade urbana sustentável dentro do campus.
+          Esta aplicação ilustra de forma tangível como a tecnologia de conversão de resíduos em H2 e eletricidade pode ser integrada ao dia a dia, servindo como um modelo de estação de carregamento limpa e local que contribui para a redução da emissão de poluentes no transporte.
         </p>
       </ParallaxSection>
 
@@ -144,14 +145,13 @@ export default function HydrogenProduction() {
       <ParallaxSection
         id="automation"
         bgImage={automationImage}
-        strength={300}
+        strength={0}
       >
         <h2 className="section-title text-accent">
           Processo Automatizado e Monitorado
         </h2>
         <p className="section-description">
-          Toda a planta é supervisionada por sistemas SCADA integrados, garantindo 
-          operação segura, eficiente e controle preciso de todos os parâmetros do processo.
+          A planta B2H2 é instrumentada com sensores, válvulas, medidores e atuadores, comandados por um Controlador Lógico Programável (CLP). A comunicação com o nível de supervisão ocorre via Ethernet para um servidor de dados desenvolvido em linguagem Python, responsável pela aquisição, validação e registro das variáveis de processo em banco de dados MySQL. O monitoramento e o controle em tempo real são realizados por um sistema supervisório via Web, complementado por uma IHM local que oferece recursos para operação por especialistas.
         </p>
       </ParallaxSection>
 
@@ -159,14 +159,13 @@ export default function HydrogenProduction() {
       <ParallaxSection
         id="ml"
         bgImage={aiImage}
-        strength={300}
+        strength={0}
       >
         <h2 className="section-title text-primary">
           Supervisão com apoio de Inteligência Artificial
         </h2>
         <p className="section-description">
-          Algoritmos de machine learning analisam e otimizam a operação em tempo real, 
-          prevendo falhas, maximizando eficiência e garantindo produção contínua de hidrogênio.
+          O sistema proposto integra um Sistema Especialista (SE) para recomendar ações de uso do equipamento e modelos de Aprendizado de Máquina (AM) para a identificação precoce de falhas, promovendo o uso adequado dos recursos, com economia e eficiência dos processos. A transmissão e persistência dos dados é uma inovação no contexto da reforma a seco, e representa a base para aplicações em Inteligência Artificial (IA), uma vez que não há IA sem dados de qualidade. Esses dados poderão ser aplicados em algoritmos de AM para geração de novos conhecimento e otimização dos processos.
         </p>
       </ParallaxSection>
     </div>

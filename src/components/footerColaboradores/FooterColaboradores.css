@@ -36,9 +36,18 @@
 
 /* Linhas com diferentes quantidades de logos */
 
-.footer-row-5 { gap: 25px; } /* Para 5 logos */
-.footer-row-6 { gap: 20px; }
-.footer-row-8 { gap: 10px; }
+.footer-row-5 {
+    gap: 25px;
+}
+
+/* Para 5 logos */
+.footer-row-6 {
+    gap: 20px;
+}
+
+.footer-row-8 {
+    gap: 10px;
+}
 
 .footer-logo img {
     height: 50px;
@@ -53,28 +62,28 @@
 }
 
 .footer-logo-small img {
-  height: 45px;
-  max-height: 45px;
+    height: 45px;
+    max-height: 45px;
 }
 
 .footer-logo-medium img {
-  height: 65px;
-  max-height: 65px;
+    height: 65px;
+    max-height: 65px;
 }
 
 .footer-logo-large img {
-  height: 100px;
-  max-height: 100px;
+    height: 100px;
+    max-height: 100px;
 }
 
 .footer-logo-xlarge img {
-  height: 130px;
-  max-height: 130px;
+    height: 130px;
+    max-height: 130px;
 }
 
 .footer-logo-xxlarge img {
-  height: 160px;
-  max-height: 160px;
+    height: 160px;
+    max-height: 160px;
 }
 
 .footer-divider {
@@ -92,29 +101,85 @@
 }
 
 .footer-label {
-  text-align: center;
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 8px;
-  margin-top: 18px;
-  letter-spacing: 1px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 8px;
+    margin-top: 18px;
+    letter-spacing: 1px;
 }
 
 @media (max-width: 768px) {
     .footer-logo img {
         height: 40px;
     }
-    
+
     .footer-row {
         gap: 20px;
     }
-    
-    .footer-row-2 { gap: 40px; }
-    .footer-row-3 { gap: 25px; }
-    .footer-row-4 { gap: 20px; }
-    .footer-row-5 { gap: 15px; }
+
+    .footer-row-2 {
+        gap: 40px;
+    }
+
+    .footer-row-3 {
+        gap: 25px;
+    }
+
+    .footer-row-4 {
+        gap: 20px;
+    }
+
+    .footer-row-5 {
+        gap: 15px;
+    }
 
     .footer-container {
         padding: 0 10px;
+        max-width: 100%;
+    }
+        .footer-logo-small img {
+        height: 1.8rem;
+        max-height: 1.8rem;
+    }
+
+    .footer-logo-medium img {
+        height: 2.7rem;
+        max-height: 2.7rem;
+    }
+
+    .footer-logo-large img {
+        height: 4rem;
+        max-height: 4rem;
+    }
+
+    .footer-logo-xlarge img {
+        height: 5.2rem;
+        max-height: 5.2rem;
+    }    
+    
+    .footer-logo-small img {
+        height: 1.8rem;
+        max-height: 1.8rem;
+    }
+
+    .footer-logo-medium img {
+        height: 2.7rem;
+        max-height: 2.7rem;
+    }
+
+    .footer-logo-large img {
+        height: 4rem;
+        max-height: 4rem;
+    }
+
+    .footer-logo-xlarge img {
+        height: 5.2rem;
+        max-height: 5.2rem;
+    }
+
+    .footer-logo-xxlarge img {
+        height: 6.5rem;
+        max-height: 6.5rem;
     }
 }
