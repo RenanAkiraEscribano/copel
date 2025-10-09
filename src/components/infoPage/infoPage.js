@@ -63,9 +63,7 @@ export default function HydrogenProduction() {
           Biodigestão Anaeróbia - Biogás
         </h2>
         <p className="section-description">
-          Os resíduos de alimentos do RU são submetidos ao processo de biodigestão anaeróbia, que compreende ciclos fundamentais como hidrólise, acidogênese,
-          acetogênese e metanogênese, gerando o biogás, um recurso energético amplamente
-          empregado como insumo para a produção de energia que consiste, principalmente, na mistura de metano (CH4) e dióxido de carbono (CO2).
+          Os resíduos de alimentos do RU são submetidos ao processo de biodigestão anaeróbia, que compreende ciclos fundamentais como hidrólise, acidogênese, acetogênese e metanogênese, gerando o biogás, um recurso energético amplamente empregado como insumo para a produção de energia, que consiste, principalmente, em uma mistura de metano (CH<sub>4</sub>) e dióxido de carbono (CO<sub>2</sub>). Para o projeto B2H2, foi desenvolvido um sistema de biodigestão inovador, que permite tratar os resíduos de  maneira contínua com elevada eficiência.
         </p>
       </ParallaxSection>
 
@@ -79,7 +77,7 @@ export default function HydrogenProduction() {
           Produção de Syngas
         </h2>
         <p className="section-description">
-          O biogás (mistura de CH4 e CO2) é submetido a um processo termoquímico a 800 oC na presença de um catalisador, desenvolvido exclusivamente para o projeto B2H2, capaz de convertê-lo em syngas (gás de síntese), que consiste em um mistura gasosa de hidrogênio (H2) e monóxido de carbo o (CO). O syngas que se caracteriza como matéria prima para a produção de vários produtos de interesse industrial (metanol, BioQAv, etc) ou para o fornecimento do hidrogênio, quando este é separado e purificado.
+          O biogás (mistura de CH<sub>4</sub> e CO<sub>2</sub>) é submetido a um processo termoquímico a 800°C na presença de um catalisador, desenvolvido exclusivamente para o projeto B2H2, capaz de convertê-lo em syngas (gás de síntese), que consiste em um mistura gasosa de hidrogênio (H<sub>2</sub>) e monóxido de carbo o (CO). O syngas que se caracteriza como matéria prima para a produção de vários produtos de interesse industrial (metanol, BioQAv, etc) ou para o fornecimento do hidrogênio, quando este é separado e purificado.
         </p>
       </ParallaxSection>
 
@@ -119,10 +117,10 @@ export default function HydrogenProduction() {
         strength={0}
       >
         <h2 className="section-title text-primary">
-          Amonia Renovável
+          Amônia Renovável
         </h2>
         <p className="section-description">
-          O hidrogênio de alta pureza produzido na planta B2H2 é um insumo essencial para a síntese da Amônia (NH3) Renovável. A Amônia é um dos principais vetores de energia junto ao hidrogênio. A Amônia renovável é crucial para a descarbonização de setores como a agricultura (fertilizantes) e o transporte marítimo (combustível), e o projeto B2H2 demonstra como o hidrogênio renovável, obtido de resíduos orgânicos, pode alimentar essa importante cadeia de valor industrial, promovendo uma economia circular e sustentável.        </p>
+          O hidrogênio de alta pureza produzido na planta B2H2 é um insumo essencial para a síntese da amônia (NH<sub>3</sub>) renovável, sendo um dos principais vetores de energia junto ao hidrogênio. A amônia renovável é crucial para a descarbonização de setores como a agricultura (fertilizantes) e o transporte marítimo (combustível), e o projeto B2H2 demonstra como o hidrogênio renovável, obtido de resíduos orgânicos, pode alimentar essa importante cadeia de valor industrial, promovendo uma economia circular e sustentável.        </p>
       </ParallaxSection>
 
       {/* Hydrogen Bike */}
@@ -135,8 +133,7 @@ export default function HydrogenProduction() {
           Mobilidade Sustentável com Bicicleta Elétrica
         </h2>
         <p className="section-description">
-          O projeto B2H2 não se limita à produção de hidrogênio; ele também demonstra seu uso final em aplicações práticas, promovendo a mobilidade urbana sustentável dentro do campus.
-          Esta aplicação ilustra de forma tangível como a tecnologia de conversão de resíduos em H2 e eletricidade pode ser integrada ao dia a dia, servindo como um modelo de estação de carregamento limpa e local que contribui para a redução da emissão de poluentes no transporte.
+          O projeto B2H2 não se limita à produção de hidrogênio; ele também demonstra várias possibilidades de usos, em aplicações práticas, promovendo a mobilidade urbana sustentável dentro do Centro Politécnico da UFPR, por exemplo. Bicicletas abastecidas com o hidrogênio de alta pureza, produzido na planta piloto, serão utilizadas para demonstração da tecnologia, sendo que o armazenamento do hidrogênio ocorrerá na forma de hidretos metálicos. Esta aplicação ilustra de forma tangível como a tecnologia de conversão de resíduos em H<sub>2</sub> e eletricidade pode ser integrada ao dia a dia, servindo como um modelo de estação de carregamento limpa e local que contribui para a redução da emissão de poluentes no transporte.
         </p>
       </ParallaxSection>
 
