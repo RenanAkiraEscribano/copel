@@ -56,24 +56,24 @@ const logoGroups = [
   {
     logos: [
       { src: eletron, alt: "", link: "https://www.eletronenergia.com.br/sobre-nos/", size: "large" },
-      { src: white, alt: "", link: "", size: "medium" },
-      { src: shimadzu, alt: "", link: "" },
-      { src: next, alt: "", link: "", size: "large"  },
+      { src: white, alt: "", link: "https://www.whitemartins.com.br/", size: "medium" },
+      { src: shimadzu, alt: "", link: "https://www.shimadzu.com.br/" },
+      { src: next, alt: "", link: "https://nextquimica.com.br/", size: "large"  },
       { src: henergreen, alt: "", link: "https://henergreen.com.br/", size: "xlarge" },
       { src: solfacil, alt: "", link: "https://solfacil.com.br/", size: "large" },
       { src: goodwe, alt: "", link: "https://br.goodwe.com/", size: "small" },
-      { src: araucaria, alt: "", link: "", size: "large"  },
+      { src: araucaria, alt: "", link: "https://www.fappr.pr.gov.br/", size: "large"  },
     ]
   },
   {
     logos: [
-      { src: labmater, alt: "labmater", link: "", size: "xlarge" },
+      { src: labmater, alt: "labmater", link: "https://palotina.ufpr.br/labmater/", size: "xlarge" },
       { src: labGD, alt: "", link: "https://spin.ufpr.br/portfolio/prestacao-de-servicos/laboratorios/laboratorio-de-estudos-em-geracao-distribuida-labgd/", size: "large" },
       { src: lacta, alt: "", link: "https://lacta.ufpr.br/", size: "medium" },
       { src: c3sl, alt: "", link: "https://www.c3sl.ufpr.br/" },
-      { src: ru, alt: "", link: "", size: "large" },
+      { src: ru, alt: "", link: "https://proad.ufpr.br/ru/historico/", size: "large" },
       { src: funpar, alt: "", link: "https://www.funpar.ufpr.br/", size: "large" },
-      { src: napi, alt: "", link: "", size: "xxlarge" },
+      { src: napi, alt: "", link: "https://www.iaraucaria.pr.gov.br/napis/napi-hidrogenio/", size: "xxlarge" },
     ]
   }
   

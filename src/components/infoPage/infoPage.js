@@ -108,8 +108,7 @@ export default function HydrogenProduction() {
           Célula a Combustível PEM
         </h2>
         <p className="section-description">
-          O hidrogênio purificado é convertido em eletricidade limpa através de células
-          PEM (Proton Exchange Membrane), gerando energia elétrica com alta eficiência.
+          O hidrogênio purificado é convertido em eletricidade através de células PEM (Proton Exchange Membrane), gerando energia elétrica sem emissões de poluentes.
         </p>
       </ParallaxSection>
 
