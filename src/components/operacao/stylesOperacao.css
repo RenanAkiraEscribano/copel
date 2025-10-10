@@ -23,6 +23,7 @@ body {
     flex-wrap: wrap; /* Permite que os widgets se ajustem conforme a largura */
     gap: 20px; /* Espaçamento entre os widgets */
     justify-content: flex-start;
+    
 }
 
 /* Estilo para o widget de informações */
@@ -210,5 +211,10 @@ button:hover {
     color: #777;
     font-style: italic;
     padding: 10px;
+}
+
+/* Adicione ao stylesOperacao.css */
+.observation-icon:hover {
+  filter: brightness(1.5);
 }
 

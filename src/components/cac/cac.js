@@ -121,7 +121,7 @@ const Cac = () => {
             </div>
             <div className="filter-options">
                 {[
-                    "PT006_TQ03", "PT007_TQ04", "ME001", "DO024", "DO026",
+                    "VAL014", "TENSAO_BATERIAS", "INVERSOR1_TENSAO", "INVERSOR1_POTENCIA", "INVERSOR2_TENSAO", "INVERSOR2_POTENCIA",
                 ].map((filtro) => (
                     <div key={filtro} className="filter-item">
                         <label>

@@ -129,10 +129,14 @@ const Reforma = () => {
                 </div>
                 <div className="filter-options">
                     {[
-                        "TE001", "TE002", "TE003", "TE004", "PT001", "PT002", "PT003_TQ01", "PT004_TQ02", "PT009",
-                        "MIT001_HUM", "MIT001_TEMP", "AT001", "FIC001_TEMP", "FIC001_MASS",
-                        "FIC001_VOL", "FIC001_PRESS", "MIT002_HUM", "MIT002_TEMP", "FIT001_TEMP",
-                        "FIT001_MASS", "FIT001_VOL", "FIT001_PRESS", "DO001", "DO002", "DO003", "DO004", "DO027",
+                        "TE001", "TE002", "TE003", "TE004", "TE005", "TE006", "TE007", "TE008", "TE009", "TE010", "TE011", "TE012", 
+                        "PT001", "PT002_TQ01", "PT003", "PT004_TQ02",
+                        "MIT001_HUM", "MIT001_TEMP", "MIT002_HUM", "MIT002_TEMP",
+                        "FIC001_TEMP", "FIC001_MASS", "FIC001_VOL", "FIC001_PRESS", 
+                        "FIT001_TEMP", "FIT001_MASS", "FIT001_VOL", "FIT001_PRESS", 
+                        "AT001_CH4", "AT001_CO2", "AT001_H2", "AT001_N", "AT001_H2S",
+                        "VAL001", "VAL002", "VAL003", "VAL004", "VAL005", "VAL006", "VAL007", "VAL008",
+                        "SYNGAS_H2", "SYNGAS_CO",
                     ].map((filtro) => (
                         <div key={filtro} className="filter-item">
                             <label>

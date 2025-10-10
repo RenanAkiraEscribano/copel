@@ -35,18 +35,22 @@ const FiltroTabs = ({ onAplicar }) => {
 
     const sensores = [
         [
-            "TE001", "TE002", "TE003", "TE004", "PT001", "PT002", "PT003_TQ01", "PT004_TQ02", "PT009",
-            "MIT001_HUM", "MIT001_TEMP", "AT001", "FIC001_TEMP", "FIC001_MASS",
-            "FIC001_VOL", "FIC001_PRESS", "MIT002_HUM", "MIT002_TEMP", "FIT001_TEMP",
-            "FIT001_MASS", "FIT001_VOL", "FIT001_PRESS",
+            "TE001", "TE002", "TE003", "TE004", "TE005", "TE006", "TE007", "TE008", "TE009", "TE010", "TE011", "TE012",
+            "PT001", "PT002_TQ01", "PT003", "PT004_TQ02",
+            "MIT001_HUM", "MIT001_TEMP", "MIT002_HUM", "MIT002_TEMP",
+            "FIC001_TEMP", "FIC001_MASS", "FIC001_VOL", "FIC001_PRESS",
+            "FIT001_TEMP", "FIT001_MASS", "FIT001_VOL", "FIT001_PRESS",
+            "AT001_CH4", "AT001_CO2", "AT001_H2", "AT001_N", "AT001_H2S",
+            "SYNGAS_H2", "SYNGAS_CO",
         ],
         [
-            "PT006_TQ03", "PT007_TQ04", "PT008_TQ05", "PT010", "FIT002_TEMP",
-            "FIT002_MASS", "FIT002_VOL", "FIT002_PRESS", "AT002", "MIT003_HUM",
-            "MIT003_TEMP", "FIC002_TEMP", "FIC002_MASS", "FIC002_VOL", "FIC002_PRESS",
+            "PT005", "PT006_TQ04",
+            "FIT002_TEMP", "FIT002_MASS", "FIT002_VOL", "FIT002_PRESS",
+            "FIC002_TEMP", "FIC002_MASS", "FIC002_VOL", "FIC002_PRESS",            
+            "PUREZA_H2"
         ],
         [
-            "PT006_TQ03", "PT007_TQ04", "ME001",
+            "TENSAO_BATERIAS", "INVERSOR1_TENSAO", "INVERSOR1_POTENCIA", "INVERSOR2_TENSAO", "INVERSOR2_POTENCIA",
         ],
     ];
 
@@ -89,7 +93,7 @@ const FiltroTabs = ({ onAplicar }) => {
 
         onAplicar({
             ...filtroApi,
-            aba: activeTab 
+            aba: activeTab
         });
     };
 

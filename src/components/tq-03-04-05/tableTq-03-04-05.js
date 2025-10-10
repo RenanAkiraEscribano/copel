@@ -53,7 +53,7 @@ const TabelaTQ03_04_05 = ({ dadosFiltrados, selectedFilters }) => {
             const valor = dado[filtro];
             let exibicao;
 
-            if (filtro.startsWith("DO")) {
+            if (filtro.startsWith("VAL")) {
               exibicao = valor ? "Aberto" : "Fechada";
             } else {
               exibicao = valor;

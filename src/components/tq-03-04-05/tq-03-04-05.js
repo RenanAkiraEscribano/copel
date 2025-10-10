@@ -121,10 +121,11 @@ const TQ030405 = () => {
             </div>
             <div className="filter-options">
                 {[
-                    "PT006_TQ03", "PT007_TQ04", "PT008_TQ05", "PT010", "FIT002_TEMP",
-                    "FIT002_MASS", "FIT002_VOL", "FIT002_PRESS", "AT002", "MIT003_HUM",
-                    "MIT003_TEMP", "FIC002_TEMP", "FIC002_MASS", "FIC002_VOL", "FIC002_PRESS",
-                    "DO018", "DO021", "DO022", "DO023", "DO025"
+                    "PT005", "PT006_TQ04",
+                    "FIT002_TEMP", "FIT002_MASS", "FIT002_VOL", "FIT002_PRESS",
+                    "FIC002_TEMP", "FIC002_MASS", "FIC002_VOL", "FIC002_PRESS",
+                    "VAL009", "VAL010", "VAL011", "VAL012", "VAL013",
+                    "PUREZA_H2"
                 ].map((filtro) => (
                     <div key={filtro} className="filter-item">
                         <label>
