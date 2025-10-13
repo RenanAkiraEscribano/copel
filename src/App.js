@@ -23,7 +23,7 @@ import funpar from './assets/funpar.png';
 import gasfuturo from './assets/gasfuturo.png';
 import goodwe from './assets/goodwe.png';
 import henergreen from './assets/henergreen.png';
-import labGD from './assets/labGB.png';
+import labGD from './assets/labGD.png';
 import lacta from './assets/lacta.png';
 import senai from './assets/senai.png';
 import solfacil from './assets/solfacil.png';
@@ -38,6 +38,47 @@ import araucaria from './assets/araucaria.png';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+const participantes = [
+  {
+    empresa: "UFPR",
+    nomes: ["Andre De Souza Leone", "Gustavo Henrique Da Costa Oliveira", "Helton Jose Alves – Coordenador", "Joao Americo Vilela Junior",
+      "Julio Cezar Da Silva Ferreira", "Lazaro Jose Gasparrini", "Lucyanne Maria Moraes Correia", "Luiz Fernando De Lima Luz Junior",
+      "Marcos Antonio Schreiner", "Marcos Lucio Corazza", "Marilice de Andrade Gracia", "Mauricio Romani", "Paola Cavalheiro Ponciano",
+      "Renan Akira Nascimento Garcia Escribano", "Ricardo Marin Israel", "Theo Pugliesi", "Thomas Gabriel Balduino Reckelberg"
+    ]
+  },
+  {
+    empresa: "GÁS FUTURO",
+    nomes: ["Ricardo Kroin", "Victor Gabriel Ferreira dos Santos", "Felipe Batista Kromp", "Juliano José Poletto", "Lucas de Oliveira",
+      "Alissa Sboinski Pinheiro", "Emerson Colombo", "Nei Jose Barboza", "Angelo Inocencio de Assis", "Ricardo Miguel Barausse",
+      "Antonio Barausse", "Guilherme Mauri Contena", "Kaue Eduardo Pires", "Daniel Elias de Oliveira Santana", "Lucas Andre Skrutnik",
+      "André Felipe Teixeira", "Daniel Fabiano da Silva", "Thiago Emanuel Camillo", "Carla Fernanda Pinheiro", "Edvilson dos Santos Pontes",
+      "Reginaldo Ferreira", "Bryan Brito Koticheski", "Lucas Nascimento de Freitas", "Daniel Vargas", "Adailton de Freitas Ferreira",
+      "Luiz Marcos Zaninelli", "Ludio Monteiro Schmidt da Conceição", "Ryan Matheus Taborda Ferreira", "Eloise Wolski", "José Maria Gasparin",
+      "Ducineide Freitas de Oliveira Vinhort", "Josiane Cupozak", "Lucilene Gurski", "Talita Pereira", "Valquíria Pereira de Freitas", 
+      "Elcio Luiz Cavalin", "Rafael Sarnick Barbosa - Responsável", "Rodrigo Bogacz da Silva", "Eliane Deda"
+    ]
+  },
+  {
+    empresa: "APRENO",
+    nomes: ["Almeida Andrade Casseb", "Ana Paula Machado Pereira", "Carlos Roberto Rocha", "Elias Alves Severino", "Evandro Cavalcanti", 
+      "Francisco Martho Nogueira Militão", "Jeferson Marcos Pereira Da Silva Morais", "Jose Claudio De Moraes", "Júlio Sancho Linhares Teixeira Militão – Coordenador",
+      "Paulo Bastos Gonçalves", "Pierre Teixeira Rodrigues"]
+  },
+  {
+    empresa: "SENAI-PE",
+    nomes: ["Aline Ferreira Barbosa", "Ana Paula de Barros Araújo", "Bruna Monteiro Roazzi", "Bruno Medeiros de Oliveira - Coordenador", "Carlos Manoel Vasconcelos Sousa", "Caroline Adriely Lira de Lima",
+      "Diogo Rocha de Araújo", "Fernando Henrique de Albuquerque Alves", "Franciely Jamily Queiroz Pereira", "Gabriel Cavalcanti Costa",
+      "Juliandson Estanislau Ferreira", "Luís Henrique Delgado Santos", "Michelle Matos Horta Tenca", "Ricardo Lins Mota", 
+      "Sayonara Andrade Eliziario", "Wilma Ferreira de Moura"
+    ]
+  },
+  {
+    empresa: "COPEL",
+    nomes: ["Teste", ]
+  }
+];
+
 const logoGroups = [
   {
     logos: [
@@ -50,7 +91,7 @@ const logoGroups = [
       { src: ufpr, alt: "", link: "https://ufpr.br/", size: "large" },
       { src: gasfuturo, alt: "", link: "https://gasfuturo.com/", size: "large" },
       { src: apreno, alt: "", link: "https://www.apreno.org.br/", size: "small" },
-      { src: senai, alt: "", link: "https://www.pe.senai.br/", size: "xxlarge"},
+      { src: senai, alt: "", link: "https://www.pe.senai.br/", size: "xxlarge" },
     ]
   },
   {
@@ -58,11 +99,11 @@ const logoGroups = [
       { src: eletron, alt: "", link: "https://www.eletronenergia.com.br/sobre-nos/", size: "large" },
       { src: white, alt: "", link: "https://www.whitemartins.com.br/", size: "medium" },
       { src: shimadzu, alt: "", link: "https://www.shimadzu.com.br/" },
-      { src: next, alt: "", link: "https://nextquimica.com.br/", size: "large"  },
+      { src: next, alt: "", link: "https://nextquimica.com.br/", size: "large" },
       { src: henergreen, alt: "", link: "https://henergreen.com.br/", size: "xlarge" },
       { src: solfacil, alt: "", link: "https://solfacil.com.br/", size: "large" },
       { src: goodwe, alt: "", link: "https://br.goodwe.com/", size: "small" },
-      { src: araucaria, alt: "", link: "https://www.fappr.pr.gov.br/", size: "large"  },
+      { src: araucaria, alt: "", link: "https://www.fappr.pr.gov.br/", size: "large" },
     ]
   },
   {
@@ -76,7 +117,7 @@ const logoGroups = [
       { src: napi, alt: "", link: "https://www.iaraucaria.pr.gov.br/napis/napi-hidrogenio/", size: "xxlarge" },
     ]
   }
-  
+
 ];
 
 
@@ -158,7 +199,9 @@ function App() {
           } />
         </Routes>
       </main>
-      <FooterColaboradores logoGroups={logoGroups} />
+      <FooterColaboradores logoGroups={logoGroups}
+        mostrarParticipantes={true}
+        participantes={participantes} />
     </div>
   );
 }

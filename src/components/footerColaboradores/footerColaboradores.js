@@ -1,10 +1,31 @@
 import "./FooterColaboradores.css";
 import React from "react";
 
-const FooterColaboradores = ({ logoGroups }) => {
+const FooterColaboradores = ({ logoGroups, mostrarParticipantes = false, participantes = [] }) => {
   return (
     <footer className="footer-color">
       <div className="footer-container">
+        {/* Faixa de participantes - visibilidade condicional */}
+        {mostrarParticipantes && participantes.length > 0 && (
+          <div className="faixa-participantes">
+            {participantes.map((grupo, grupoIndex) => (
+              <div key={grupoIndex} className="grupo-participantes">
+                <div className="titulo-empresa">
+                  <strong>{grupo.empresa}</strong>
+                </div>
+                <div className="lista-participantes">
+                  {grupo.nomes.map((nome, nomeIndex) => (
+                    <span key={nomeIndex} className="nome-participante">
+                      {nome}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Logos existentes */}
         <div className="footer-logos">
           {logoGroups.map((group, groupIndex) => (
             <React.Fragment key={groupIndex}>

@@ -109,6 +109,98 @@
     letter-spacing: 1px;
 }
 
+/* ===== NOVOS ESTILOS PARA FAIXA DE PARTICIPANTES ===== */
+/* Adicionados sem modificar os estilos existentes */
+
+.faixa-participantes {
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.grupo-participantes {
+  margin-bottom: 20px;
+}
+
+.grupo-participantes:last-child {
+  margin-bottom: 0;
+}
+
+.titulo-empresa {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+.lista-participantes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  justify-content: flex-start;
+}
+
+.nome-participante {
+  color: #555;
+  font-size: 14px;
+  padding: 6px 12px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.nome-participante:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos responsivos para a faixa de participantes */
+@media (max-width: 768px) {
+  .faixa-participantes {
+    padding: 20px 15px;
+    margin-bottom: 20px;
+  }
+
+  .titulo-empresa {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .lista-participantes {
+    justify-content: center;
+    gap: 10px 15px;
+  }
+
+  .nome-participante {
+    font-size: 13px;
+    padding: 5px 10px;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 480px) {
+  .faixa-participantes {
+    padding: 15px 10px;
+  }
+
+  .lista-participantes {
+    gap: 8px 12px;
+  }
+
+  .nome-participante {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+
 @media (max-width: 768px) {
     .footer-logo img {
         height: 40px;
