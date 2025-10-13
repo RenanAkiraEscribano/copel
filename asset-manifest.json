@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/copel/static/css/main.a12d7394.css",
-    "main.js": "/copel/static/js/main.fee2741c.js",
+    "main.css": "/copel/static/css/main.775f2140.css",
+    "main.js": "/copel/static/js/main.edc0a248.js",
     "static/media/teste.mp4": "/copel/static/media/teste.3fbfec13a25f41abeab5.mp4",
     "static/media/amonia.jpg": "/copel/static/media/amonia.7212159f11b152f6e2bb.jpg",
     "static/media/syngas.jpg": "/copel/static/media/syngas.42af3b320bd95430bb2c.jpg",
@@ -14,9 +14,9 @@
     "static/media/psa-system.jpg": "/copel/static/media/psa-system.90d8e9b13e3c98ca6914.jpg",
     "static/media/automation-control.jpg": "/copel/static/media/automation-control.47d85f5d71060c8a4894.jpg",
     "static/media/next.png": "/copel/static/media/next.80400b0c35fb54b00bbc.png",
+    "static/media/labGD.png": "/copel/static/media/labGD.f83199fc097c3a22ce11.png",
     "static/media/fuel-cell.jpg": "/copel/static/media/fuel-cell.1a70c4c706ad4dee820f.jpg",
     "static/media/hero.jpg": "/copel/static/media/hero.048bc8265a0330a66bea.jpg",
-    "static/media/labGD.png": "/copel/static/media/labGD.dc510e02756378e00fc3.png",
     "static/media/ru.png": "/copel/static/media/ru.1f7104f1f2cc351e89d7.png",
     "static/media/araucaria.png": "/copel/static/media/araucaria.5722701200b274163881.png",
     "static/media/apreno.png": "/copel/static/media/apreno.edbcbaef856dc3ca9898.png",
@@ -37,11 +37,11 @@
     "static/media/copel.png": "/copel/static/media/copel.33e557ca2eb24d0e4738.png",
     "static/media/c3sl.png": "/copel/static/media/c3sl.933124193b3c0133fbbc.png",
     "index.html": "/copel/index.html",
-    "main.a12d7394.css.map": "/copel/static/css/main.a12d7394.css.map",
-    "main.fee2741c.js.map": "/copel/static/js/main.fee2741c.js.map"
+    "main.775f2140.css.map": "/copel/static/css/main.775f2140.css.map",
+    "main.edc0a248.js.map": "/copel/static/js/main.edc0a248.js.map"
   },
   "entrypoints": [
-    "static/css/main.a12d7394.css",
-    "static/js/main.fee2741c.js"
+    "static/css/main.775f2140.css",
+    "static/js/main.edc0a248.js"
   ]
 }
