@@ -23,7 +23,7 @@ import funpar from './assets/funpar.png';
 import gasfuturo from './assets/gasfuturo.png';
 import goodwe from './assets/goodwe.png';
 import henergreen from './assets/henergreen.png';
-import labGD from './assets/labGD.png';
+import labGD from './assets/labGB.png';
 import lacta from './assets/lacta.png';
 import senai from './assets/senai.png';
 import solfacil from './assets/solfacil.png';
@@ -68,7 +68,7 @@ const logoGroups = [
   {
     logos: [
       { src: labmater, alt: "labmater", link: "https://palotina.ufpr.br/labmater/", size: "xlarge" },
-      { src: labGD, alt: "", link: "https://spin.ufpr.br/portfolio/prestacao-de-servicos/laboratorios/laboratorio-de-estudos-em-geracao-distribuida-labgd/", size: "large" },
+      { src: labGD, alt: "", link: "https://spin.ufpr.br/portfolio/prestacao-de-servicos/laboratorios/laboratorio-de-estudos-em-geracao-distribuida-labgd/", size: "medium" },
       { src: lacta, alt: "", link: "https://lacta.ufpr.br/", size: "medium" },
       { src: c3sl, alt: "", link: "https://www.c3sl.ufpr.br/" },
       { src: ru, alt: "", link: "https://proad.ufpr.br/ru/historico/", size: "large" },

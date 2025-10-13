@@ -106,7 +106,7 @@ export default function HydrogenProduction() {
           Célula a Combustível PEM
         </h2>
         <p className="section-description">
-          O hidrogênio purificado é convertido em eletricidade através de células PEM (Proton Exchange Membrane), gerando energia elétrica sem emissões de poluentes.
+          O sistema de geração de energia a hidrogênio do Campus Politécnico da UFPR baseia-se em células a combustível do tipo PEM (Proton Exchange Membrane). O hidrogênio, previamente purificado e armazenado em cilindros, alimenta duas células PEM de 2,5 kW cada. No interior das células, o hidrogênio reage eletroquimicamente com o oxigênio do ar, gerando eletricidade, calor e água como único subproduto, sem emissão de poluentes. A potência produzida é regulada por um banco de baterias que armazena e estabiliza a energia, garantindo fornecimento contínuo e ajustando a potência instantânea. A corrente contínua (CC) proveniente das células e baterias é então convertida em corrente alternada (CA) por dois inversores. Por fim, a energia elétrica gerada é integrada à rede do Campus, demonstrando o potencial do uso sustentável de fontes limpas de energia.
         </p>
       </ParallaxSection>
 
