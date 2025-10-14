@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/copel/static/css/main.775f2140.css",
-    "main.js": "/copel/static/js/main.edc0a248.js",
+    "main.js": "/copel/static/js/main.a5bc8491.js",
     "static/media/teste.mp4": "/copel/static/media/teste.3fbfec13a25f41abeab5.mp4",
     "static/media/amonia.jpg": "/copel/static/media/amonia.7212159f11b152f6e2bb.jpg",
-    "static/media/syngas.jpg": "/copel/static/media/syngas.42af3b320bd95430bb2c.jpg",
     "static/media/ufpr.png": "/copel/static/media/ufpr.f21e9080d847de737595.png",
     "static/media/food.jpg": "/copel/static/media/food.254ffa30ed63f939f8f2.jpg",
     "static/media/biogas.jpg": "/copel/static/media/biogas.41462fbb9b363f2aef2e.jpg",
     "static/media/certificado.jpg": "/copel/static/media/certificado.bd18e83359564b79c3e3.jpg",
     "static/media/bike.jpg": "/copel/static/media/bike.f3befaa52ab94bbc876c.jpg",
     "static/media/white.png": "/copel/static/media/white.6375a61b828eac8b6907.png",
+    "static/media/syngas.jpg": "/copel/static/media/syngas.e9e2100c1d5c6e1a77c6.jpg",
     "static/media/psa-system.jpg": "/copel/static/media/psa-system.90d8e9b13e3c98ca6914.jpg",
     "static/media/automation-control.jpg": "/copel/static/media/automation-control.47d85f5d71060c8a4894.jpg",
     "static/media/next.png": "/copel/static/media/next.80400b0c35fb54b00bbc.png",
@@ -38,10 +38,10 @@
     "static/media/c3sl.png": "/copel/static/media/c3sl.933124193b3c0133fbbc.png",
     "index.html": "/copel/index.html",
     "main.775f2140.css.map": "/copel/static/css/main.775f2140.css.map",
-    "main.edc0a248.js.map": "/copel/static/js/main.edc0a248.js.map"
+    "main.a5bc8491.js.map": "/copel/static/js/main.a5bc8491.js.map"
   },
   "entrypoints": [
     "static/css/main.775f2140.css",
-    "static/js/main.edc0a248.js"
+    "static/js/main.a5bc8491.js"
   ]
 }
