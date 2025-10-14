@@ -35,7 +35,7 @@ const Home = () => {
                 height="700px"
                 preserveAspectRatio="xMidYMid slice"
             >
-                <image href="diagrama.svg" width="100%" height="100%" />
+                <image href='/diagrama.svg' width="100%" height="100%" />
                 {Object.keys(data).map((sensorId) => {
                     const position = sensorPositions[sensorId];
 

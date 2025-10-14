@@ -91,8 +91,7 @@ export default function HydrogenProduction() {
           Hidrogênio Renovável de Alta Pureza
         </h2>
         <p className="section-description">
-          O processo de Pressure Swing Adsorption (PSA) garante a purificação do hidrogênio,
-          removendo impurezas e concentrando H₂ para uso em células a combustível.
+          O processo de Pressure Swing Adsorption (PSA) é responsável pela purificação do hidrogênio por meio da adsorção seletiva de impurezas em materiais porosos, como zeólitas ou peneiras moleculares. Durante as etapas de pressurização e despressurização, o sistema remove o CO, resultando em hidrogênio com pureza superior a 99,99%, adequado para uso em células a combustível do tipo PEM, onde a presença de contaminantes pode comprometer o desempenho e a durabilidade do sistema eletroquímico.
         </p>
       </ParallaxSection>
 

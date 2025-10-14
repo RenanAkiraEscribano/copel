@@ -75,7 +75,7 @@ const participantes = [
   },
   {
     empresa: "COPEL",
-    nomes: ["Teste", ]
+    nomes: ["", ]
   }
 ];
 
