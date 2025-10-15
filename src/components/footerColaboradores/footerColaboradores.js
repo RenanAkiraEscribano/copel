@@ -56,6 +56,15 @@ const FooterColaboradores = ({ logoGroups, mostrarParticipantes = false, partici
             </React.Fragment>
           ))}
         </div>
+
+        {/* Seção de contato */}
+        <div className="footer-contato">
+          <div className="contato-info">
+            <strong>CONTATO: </strong>
+            <span>labmater@ufpr.br | +55 45 9 9912-2880</span>
+          </div>
+        </div>
+
         <div className="footer-copy">
           © {new Date().getFullYear()} Projeto COPEL. Todos os direitos reservados.
         </div>

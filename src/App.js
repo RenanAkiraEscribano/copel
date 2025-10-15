@@ -43,8 +43,8 @@ const participantes = [
     empresa: "UFPR",
     nomes: ["Andre De Souza Leone", "Gustavo Henrique Da Costa Oliveira", "Helton Jose Alves – Coordenador", "Joao Americo Vilela Junior",
       "Julio Cezar Da Silva Ferreira", "Lazaro Jose Gasparrini", "Lucyanne Maria Moraes Correia", "Luiz Fernando De Lima Luz Junior",
-      "Marcos Antonio Schreiner", "Marcos Lucio Corazza", "Marilice de Andrade Gracia", "Mauricio Romani", "Paola Cavalheiro Ponciano",
-      "Renan Akira Nascimento Garcia Escribano", "Ricardo Marin Israel", "Theo Pugliesi", "Thomas Gabriel Balduino Reckelberg"
+      "Mabel Karina Arantes", "Marcos Antonio Schreiner", "Marcos Lucio Corazza", "Marilice de Andrade Gracia", "Mauricio Romani", 
+      "Paola Cavalheiro Ponciano", "Renan Akira Nascimento Garcia Escribano", "Ricardo Marin Israel", "Theo Pugliesi", "Thomas Gabriel Balduino Reckelberg"
     ]
   },
   {
@@ -78,7 +78,12 @@ const participantes = [
     nomes: ["Fábio Sevscuec Dos Santos - Gerente", "Elaine Pereira Lopes de Lima", "Giovani Marcel Teixeira", "Gustavo Ortigara", "Soraia Giordani", "Lorival Antunes da Silva Junior",
       "Victor Frederico Muller Junior", "Francielle Gambetta", "Rafael Ferreira do Nascimento" 
     ]
+  },
+  {
+    empresa: "Obra/Realização",
+    nomes: ["MAGSERV Manutenção e Serviços LTDA", "Julia Ramos Arquitetura"]
   }
+
 ];
 
 const logoGroups = [
