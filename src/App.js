@@ -43,8 +43,9 @@ const participantes = [
     empresa: "UFPR",
     nomes: ["Andre De Souza Leone", "Gustavo Henrique Da Costa Oliveira", "Helton Jose Alves – Coordenador", "Joao Americo Vilela Junior",
       "Julio Cezar Da Silva Ferreira", "Lazaro Jose Gasparrini", "Lucyanne Maria Moraes Correia", "Luiz Fernando De Lima Luz Junior",
-      "Mabel Karina Arantes", "Marcos Antonio Schreiner", "Marcos Lucio Corazza", "Marilice de Andrade Gracia", "Mauricio Romani", 
-      "Paola Cavalheiro Ponciano", "Renan Akira Nascimento Garcia Escribano", "Ricardo Marin Israel", "Theo Pugliesi", "Thomas Gabriel Balduino Reckelberg"
+      "Mabel Karina Arantes", "Marcos Antonio Schreiner", "Marcos Lucio Corazza", "Marcus Vinícius Vieira de Brito",
+      "Marilice de Andrade Gracia", "Mauricio Romani", "Paola Cavalheiro Ponciano", "Milene da Silva", "Renan Akira Nascimento Garcia Escribano",
+      "Ricardo Marin Israel", "Thalise Salas Borges", "Theo Pugliesi", "Thomas Gabriel Balduino Reckelberg"
     ]
   },
   {
