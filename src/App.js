@@ -63,7 +63,7 @@ const participantes = [
   {
     empresa: "APRENO",
     nomes: ["Almeida Andrade Casseb", "Ana Paula Machado Pereira", "Carlos Roberto Rocha", "Elias Alves Severino", "Evandro Cavalcanti", 
-      "Francisco Martho Nogueira Militão", "Jeferson Marcos Pereira Da Silva Morais", "Jose Claudio De Moraes", "Júlio Sancho Linhares Teixeira Militão – Coordenador",
+      "Francisco Martho Nogueira Militão", "Jeferson Marcos Pereira Da Silva Morais", "Leandro Soares Moreira Dill", "Jose Claudio De Moraes", "Júlio Sancho Linhares Teixeira Militão – Coordenador",
       "Paulo Bastos Gonçalves", "Pierre Teixeira Rodrigues"]
   },
   {
