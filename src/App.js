@@ -81,8 +81,12 @@ const participantes = [
     ]
   },
   {
-    empresa: "Obra/Realização",
-    nomes: ["MAGSERV Manutenção e Serviços LTDA", "Julia Ramos Arquitetura"]
+    empresa: "Obra Civil",
+    nomes: ["MAGSERV Manutenção e Serviços LTDA"]
+  },
+  {
+    empresa: "Projeto arquitetônico",
+    nomes: ["Julia Ramos Arquitetura"]
   }
 
 ];

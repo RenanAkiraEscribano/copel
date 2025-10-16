@@ -61,7 +61,7 @@ const FooterColaboradores = ({ logoGroups, mostrarParticipantes = false, partici
         <div className="footer-contato">
           <div className="contato-info">
             <strong>CONTATO: </strong>
-            <span>labmater@ufpr.br | +55 45 9 9912-2880</span>
+            <span>labmater@ufpr.br</span>
           </div>
         </div>
 
