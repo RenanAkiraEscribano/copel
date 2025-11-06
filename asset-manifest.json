@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/copel/static/css/main.c85d1bec.css",
-    "main.js": "/copel/static/js/main.06884519.js",
+    "main.css": "/copel/static/css/main.586db3d8.css",
+    "main.js": "/copel/static/js/main.708a33ef.js",
     "static/media/teste.mp4": "/copel/static/media/teste.3fbfec13a25f41abeab5.mp4",
     "static/media/amonia.jpg": "/copel/static/media/amonia.7212159f11b152f6e2bb.jpg",
     "static/media/ufpr.png": "/copel/static/media/ufpr.f21e9080d847de737595.png",
@@ -37,11 +37,11 @@
     "static/media/copel.png": "/copel/static/media/copel.33e557ca2eb24d0e4738.png",
     "static/media/c3sl.png": "/copel/static/media/c3sl.933124193b3c0133fbbc.png",
     "index.html": "/copel/index.html",
-    "main.c85d1bec.css.map": "/copel/static/css/main.c85d1bec.css.map",
-    "main.06884519.js.map": "/copel/static/js/main.06884519.js.map"
+    "main.586db3d8.css.map": "/copel/static/css/main.586db3d8.css.map",
+    "main.708a33ef.js.map": "/copel/static/js/main.708a33ef.js.map"
   },
   "entrypoints": [
-    "static/css/main.c85d1bec.css",
-    "static/js/main.06884519.js"
+    "static/css/main.586db3d8.css",
+    "static/js/main.708a33ef.js"
   ]
 }
