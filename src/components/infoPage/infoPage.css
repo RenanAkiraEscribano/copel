@@ -123,6 +123,7 @@ body {
   align-items: center;
   gap: 2rem;
   padding: 1rem 1.5rem;
+  position: relative; /* ADICIONADO: permite posicionamento absoluto do switch */
 }
 
 .navbar-content ul {
@@ -191,6 +192,58 @@ body {
 
 .navbar-hamburger::after {
   top: 8px;
+}
+
+.lang-switch {
+  position: absolute;
+  right: -10rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  gap: 0.25rem;
+  background: rgba(255,255,255,0.04);
+  border-radius: 999px;
+  padding: 0.15rem;
+  border: 1px solid rgba(255,255,255,0.06);
+  z-index: 101;
+}
+
+.lang-option {
+  background: transparent;
+  color: #d0d0d0;
+  border: none;
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.65rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease, transform 120ms ease;
+}
+
+.lang-option:hover {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-1px);
+}
+
+/* active state highlight */
+.lang-option.active {
+  background: linear-gradient(90deg, #00ff88 0%, #24d18b 100%);
+  color: #062017;
+  box-shadow: 0 6px 18px rgba(0,255,136,0.12);
+}
+
+/* mobile override: keep switch visible and compact */
+@media (max-width: 768px) {
+  .lang-switch {
+    right: 1rem;
+    top: 0.9rem;
+    transform: none;
+    padding: 0.1rem;
+  }
+  .lang-option {
+    padding: 0.28rem 0.5rem;
+    font-size: 0.8rem;
+  }
 }
 
 /* Utility Classes */

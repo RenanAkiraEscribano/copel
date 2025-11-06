@@ -45,7 +45,7 @@ const participantes = [
       "Julio Cezar Da Silva Ferreira", "Lazaro Jose Gasparrini", "Lucyanne Maria Moraes Correia", "Luiz Fernando De Lima Luz Junior",
       "Mabel Karina Arantes", "Marcos Antonio Schreiner", "Marcos Lucio Corazza", "Marcus Vinícius Vieira de Brito",
       "Marilice de Andrade Gracia", "Mauricio Romani", "Paola Cavalheiro Ponciano", "Milene da Silva", "Renan Akira Nascimento Garcia Escribano",
-      "Ricardo Marin Israel", "Thalise Salas Borges", "Theo Pugliesi", "Thomas Gabriel Balduino Reckelberg"
+      "Ricardo Marin Israel", "Thalise Salas Borges", "Theo Pugliesi", "Thomas Gabriel Balduino Reckelberg", "Guilherme Emanuel de Queiros Souza"
     ]
   },
   {
