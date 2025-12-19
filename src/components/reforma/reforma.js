@@ -129,7 +129,12 @@ const Reforma = () => {
                 </div>
                 <div className="filter-options">
                     {[
-                        "TE001", "TE002", "TE003", "TE004", "TE005", "TE006", "TE007", "TE008", "TE009", "TE010", "TE011", "TE012", 
+                        "TE001", "TE002", "TE003", "TE004", "TE005", "TE006", "TE007", "TE008", "TE009", "TE010", "TE011", "TE012",
+                        "OutputHeat_PWM_PF", "OutputHeat_PWM_R1_Z1", "OutputHeat_PWM_R1_Z2", "OutputHeat_PWM_R1_Z3", "OutputHeat_PWM_R2_Z1",
+                        "OutputHeat_PWM_R2_Z2", "OutputHeat_PWM_R2_Z3", "OutputHeat_PF", "OutputHeat_R1_Z1", "OutputHeat_R1_Z2",
+                        "OutputHeat_R1_Z3", "OutputHeat_R2_Z1", "OutputHeat_R2_Z2", "OutputHeat_R2_Z3", "SGA001", "TIMESTAMP/4:YEAR",
+                        "TIMESTAMP/4:MONTH", "TIMESTAMP/4:DAY", "TIMESTAMP/4:WEEKDAY", "TIMESTAMP/4:HOUR", "TIMESTAMP/4:MINUTE",
+                        "TIMESTAMP/4:SECOND", "TIMESTAMP/4:NANOSECOND",
                         "PT001", "PT002_TQ01", "PT003", "PT004_TQ02",
                         "MIT001_HUM", "MIT001_TEMP", "MIT002_HUM", "MIT002_TEMP",
                         "FIC001_TEMP", "FIC001_MASS", "FIC001_VOL", "FIC001_PRESS", 
