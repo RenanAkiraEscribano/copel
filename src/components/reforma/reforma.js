@@ -5,6 +5,19 @@ import { CSVLink } from 'react-csv';
 
 const API_DOMINIO = process.env.REACT_APP_API_DOMINIO;
 
+const pad = (v) => String(v).padStart(2, '0');
+
+const formatTimestamp = (s) => {
+  if (s === null || s === undefined || s === '') return '';
+  // se já estiver no formato sem T/Z apenas retorna
+  if (typeof s !== 'string') s = String(s);
+  // tenta parsear; se inválido, remove T/Z simples
+  const d = new Date(s);
+  if (isNaN(d)) return s.replace('T', ' ').replace('Z', '');
+  // formata em timezone local: YYYY-MM-DD HH:MM:SS
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+};
+
 const Reforma = () => {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [filter, setFilter] = useState([]);
@@ -77,6 +90,24 @@ const Reforma = () => {
             aplicarFiltro();
         }
     };
+
+    // transforma os dados para CSV: remove T/Z dos timestamps e evita strings entre aspas
+    const csvData = React.useMemo(() => {
+        if (!Array.isArray(dadosFiltrados)) return [];
+        return dadosFiltrados.map((row) => {
+            const out = {};
+            Object.keys(row).forEach((key) => {
+                const val = row[key];
+                // heurística: campos de data/timestamp costumam ter "date" "data" "timestamp" ou "time" no nome
+                if (/date|data|timestamp|time/i.test(key)) {
+                    out[key] = formatTimestamp(val);
+                } else {
+                    out[key] = val;
+                }
+            });
+            return out;
+        });
+    }, [dadosFiltrados]);
 
     function filtrosReforma() {
         return (
@@ -163,7 +194,14 @@ const Reforma = () => {
                 </div>
                 <button className="filter-button" onClick={aplicarFiltro}>Aplicar Filtro</button>
                 <button className="csv-button" >
-                    <CSVLink data={dadosFiltrados} filename={"dados_Tabela_Reforma.csv"}>Download CSV</CSVLink>
+                    <CSVLink
+                        data={csvData}
+                        filename={"dados_Tabela_Reforma.csv"}
+                        quoteStrings={false}
+                        enclosingCharacter={''}
+                    >
+                        Download CSV
+                    </CSVLink>
                 </button>
             </div>
         )
