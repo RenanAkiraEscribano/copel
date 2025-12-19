@@ -39,10 +39,26 @@ const TabelaReforma = ({ dadosFiltrados, selectedFilters }) => {
     );
   };
 
+  // helper para formatar data preservando timezone local
+  const formatDate = (dateString) => {
+    if (!dateString) return '';
+    // normaliza 'YYYY-MM-DD HH:mm:ss' para 'YYYY-MM-DDTHH:mm:ss' se necessário
+    const normalized = String(dateString).replace(' ', 'T');
+    const d = new Date(normalized);
+    if (isNaN(d)) return dateString;
+    return new Intl.DateTimeFormat('pt-BR', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    }).format(d);
+  };
+
   const renderizarLinhas = () => {
     return dadosPagina.map((dado, index) => {
-      const date = new Date(dado.DATA_REFORMA);
-      const formattedDate = date.toISOString().slice(0, 19).replace('T', ' ');
+      const formattedDate = formatDate(dado.DATA_REFORMA);
 
       return (
         <tr key={index}>
