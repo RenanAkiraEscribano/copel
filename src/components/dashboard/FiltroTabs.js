@@ -36,6 +36,7 @@ const FiltroTabs = ({ onAplicar }) => {
     const sensores = [
         [
             "TE001", "TE002", "TE003", "TE004", "TE005", "TE006", "TE007", "TE008", "TE009", "TE010", "TE011", "TE012",
+            "SP_PRE_FORNO", "SP_R1_ZONA1", "SP_R1_ZONA2", "SP_R1_ZONA3", "SP_R2_ZONA1", "SP_R2_ZONA2", "SP_R2_ZONA3",
             "OutputHeat_PWM_PF", "OutputHeat_PWM_R1_Z1", "OutputHeat_PWM_R1_Z2", "OutputHeat_PWM_R1_Z3", "OutputHeat_PWM_R2_Z1",
             "OutputHeat_PWM_R2_Z2", "OutputHeat_PWM_R2_Z3", "OutputHeat_PF", "OutputHeat_R1_Z1", "OutputHeat_R1_Z2",
             "OutputHeat_R1_Z3", "OutputHeat_R2_Z1", "OutputHeat_R2_Z2", "OutputHeat_R2_Z3", "SGA001", "TIMESTAMP/4:YEAR",
